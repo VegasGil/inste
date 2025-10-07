@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Discipulado Móvil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+  <header>
+    <h1>Discipulado INSTE</h1>
+    <p>Caminando con Cristo, día a día</p>
+    <button class="toggle-mode" onclick="toggleMode()">🌙</button>
+  </header>
+
+ <div class="container">
+  <div class="card" onclick="openModal('leccion1')">
+    <h2>Lección 1: El señorío de Cristo</h2>
+  </div>
+  <div class="card" onclick="openModal('leccion2')">
+    <h2>Lección 2: La base bíblica del discipulado</h2>
+  </div>
+  <div class="card" onclick="openModal('leccion3')">
+    <h2>Lección 3: La oración equilibrada</h2>
+  </div>
+  <div class="card" onclick="openModal('leccion4')">
+    <h2>Lección 4: La lucha espiritual y la oración</h2>
+  </div>
+  <div class="card" onclick="openModal('leccion5')">
+    <h2>Lección 5: Orando en el Espíritu</h2>
+  </div>
+  <div class="card" onclick="openModal('leccion6')">
+    <h2>Lección 6: El testimonio personal</h2>
+  </div>
+  <div class="card" onclick="openModal('leccion7')">
+    <h2>Lección 7: “Me seréis testigos” (2ª Parte)</h2>
+  </div>
+  <div class="card" onclick="openModal('leccion8')">
+    <h2>Lección 8: ¿Quién soy yo en Cristo?</h2>
+  </div>
+  <div class="card" onclick="openModal('leccion9')">
+    <h2>Lección 9: “Unos a otros”</h2>
+  </div>
+  <div class="card" onclick="openModal('leccion10')">
+    <h2>Lección 10: La unidad del cuerpo</h2>
+  </div>
+  <div class="card" onclick="openModal('leccion11')">
+    <h2>Lección 11: Cómo estudiar la Biblia</h2>
+  </div>
+  <div class="card" onclick="openModal('leccion12')">
+    <h2>Lección 12: El método sintético</h2>
+  </div>
+  <div class="card" onclick="openModal('leccion13')">
+    <h2>Lección 13: Métodos temático y biográfico</h2>
+  </div>
+  <div class="card" onclick="openModal('leccion14')">
+    <h2>Lección 14: Repaso del discipulado</h2>
+  </div>
+  
+</div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content" id="modal-content"></div>
+  </div>
+
+  <script src="script.js">  </script>

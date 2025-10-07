@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="examen.css">
+  <title>Examen 1 – Orientación</title>
+
+</head>
+<body>
+    <div class="examen-container">
+
+   
+  <div class="exame">
+  <div class="encabezado">
+    <img src="image.png" alt="INSTE" class="logo" />
+    <h1>El Discipulado 1</h1>
+  </div>
+  <h2>Examen 1: Orientación</h2>
+  <h3 id="nombre-impreso"></h3>
+  <p><em>Selecciona la respuesta correcta o completa según corresponda.</em></p>
+</div>
+
+
+    <form id="form-examen">
+      <!-- Preguntas tipo test -->
+      <article>
+        <label for="p1">1. ¿Cuántas asignaturas hay en el Primer Nivel?</label>
+        <select name="p1">
+          <option value="">Selecciona</option>
+          <option value="A">A. 4</option>
+          <option value="B">B. 5</option>
+          <option value="C">C. 6</option>
+          <option value="D">D. 7</option>
+        </select>
+      </article>
+
+      <article>
+        <label for="p2">2. ¿En cuántas partes están divididas las lecciones?</label>
+        <select name="p2">
+          <option value="">Selecciona</option>
+          <option value="A">A. 4</option>
+          <option value="B">B. 5</option>
+          <option value="C">C. 6</option>
+          <option value="D">D. 7</option>
+        </select>
+      </article>
+
+      <article>
+        <label for="p3">3. ¿Dónde aprende el alumno el contenido?</label>
+        <select name="p3">
+          <option value="">Selecciona</option>
+          <option value="A">A. Reunión semanal</option>
+          <option value="B">B. Conferencias del profesor</option>
+          <option value="C">C. En casa con el libro</option>
+          <option value="D">D. En ningún lugar</option>
+        </select>
+      </article>
+
+      <article>
+        <label for="p4">4. ¿Cuándo debe estudiar el alumno?</label>
+        <select name="p4">
+          <option value="">Selecciona</option>
+          <option value="A">A. Durante la reunión</option>
+          <option value="B">B. El día antes</option>
+          <option value="C">C. No necesita estudiar</option>
+          <option value="D">D. Todos los días</option>
+        </select>
+      </article>
+
+      <article>
+        <label for="p5">5. ¿Cuál es la meta del Primer Nivel?</label>
+        <select name="p5">
+          <option value="">Selecciona</option>
+          <option value="A">A. Conocimiento bíblico</option>
+          <option value="B">B. Preparar líderes</option>
+          <option value="C">C. Entrenar maestros</option>
+          <option value="D">D. Hacer discípulos</option>
+        </select>
+      </article>
+
+      <article>
+        <label for="p6">6. ¿Qué significa que el líder sea mentor?</label>
+        <select name="p6">
+          <option value="">Selecciona</option>
+          <option value="A">A. Es simpático</option>
+          <option value="B">B. Sabe todo</option>
+          <option value="C">C. Comparte tiempo y ejemplo</option>
+          <option value="D">D. Experto en teología</option>
+        </select>
+      </article>
+
+      <article>
+        <label for="p7">7. ¿Para qué sirve el contrato espiritual?</label>
+        <select name="p7">
+          <option value="">Selecciona</option>
+          <option value="A">A. Fijar metas personales</option>
+          <option value="B">B. Aumentar de peso</option>
+          <option value="C">C. Unificar metas</option>
+          <option value="D">D. Recaudar fondos</option>
+        </select>
+      </article>
+
+      <article>
+        <label for="p8">8. ¿Cuál es la tarea de los compañeros?</label>
+        <select name="p8">
+          <option value="">Selecciona</option>
+          <option value="A">A. Animarse mutuamente</option>
+          <option value="B">B. Estudiar juntos</option>
+          <option value="C">C. Tomar café</option>
+          <option value="D">D. Predicar</option>
+        </select>
+      </article>
+
+      <article>
+        <label for="p9">9. ¿Qué ocurre en la reunión semanal?</label>
+        <select name="p9">
+          <option value="">Selecciona</option>
+          <option value="A">A. Conferencia del líder</option>
+          <option value="B">B. Reflexión grupal</option>
+          <option value="C">C. Estudio bíblico</option>
+          <option value="D">D. Estudio guiado</option>
+        </select>
+      </article>
+
+      <!-- Preguntas de completación -->
+      <article>
+        <label for="p10">10. ¿Qué versículo bíblico es el lema de INSTE?</label>
+        <input type="text" name="p10" class="corto" placeholder="Ej: 2 Timoteo 2:15" />
+      </article>
+
+      <article>
+        <label for="p11">11–15. Escribe de memoria el versículo</label>
+        <textarea name="p11" rows="4" placeholder="Escribe aquí el versículo completo..."></textarea>
+      </article>
+
+      <!-- Confirmaciones -->
+      <article>
+        <label>16. ¿Estudiaste todos los días?</label>
+        <input type="checkbox" name="extra1" />
+      </article>
+
+      <article>
+        <label>17. ¿Terminaste la lección?</label>
+        <input type="checkbox" name="extra2" />
+      </article>
+
+      <button type="button" onclick="calcularExamen()">Calcular y Imprimir</button>
+      <div id="resultado"></div>
+    </form>
+  </div>
+ </div>
+ <!-- Modal de bienvenida -->
+<div id="modal-instrucciones" class="modal">
+  <div class="modal-content">
+    <h2>Instrucciones del examen</h2>
+    <p>Escribe en el espacio a la izquierda la letra de la respuesta correcta.<br>Hay solamente una respuesta por pregunta.</p>
+    <label for="nombre">Ingresa tu nombre:</label>
+    <input type="text" id="nombre" />
+    <button onclick="iniciarExamen()">Continuar</button>
+  </div>
+</div>
+
+<!-- Modal de bloqueo -->
+<div id="modal-bloqueo" class="modal">
+  <div class="modal-content">
+    <h2>Examen ya presentado</h2>
+    <p id="mensaje-bloqueo"></p>
+    <label for="clave">Ingresa la clave del facilitador para desbloquear:</label>
+    <input type="password" id="clave" />
+    <button onclick="desbloquearExamen()">Desbloquear</button>
+  </div>
+</div>
+ <script src="examen.js"></script>
+</body>
+</html>
