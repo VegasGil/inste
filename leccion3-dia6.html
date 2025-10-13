@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Examen 6 – La oración equilibrada</title>
+  <link rel="stylesheet" href="examen.css" />
+</head>
+<body>
+  <div class="examen-container">
+    <div class="exame">
+      <div class="encabezado">
+        <img src="image.png" alt="INSTE" class="logo" />
+        <h1>El Discipulado 1</h1>
+      </div>
+      <h2>Examen 3: La oración equilibrada</h2>
+      <h3 id="nombre-impreso"></h3>
+      <p><em>Identifica los tipos de oración y escribe el Padrenuestro.</em></p>
+    </div>
+
+    <form id="form-oracion">
+      <section class="puntuacion">
+        <p><strong>Máximo número de puntos:</strong> 14</p>
+        <p><strong>Menos las respuestas incorrectas:</strong> –</p>
+        <p><strong>Total puntuación de este examen:</strong></p>
+      </section>
+
+      <article>
+        <label>1–6. Identifica las seis tipos de oración:</label>
+        <div class="oracion-circulo">
+          <input type="text" name="oracion1" placeholder="1._Escribe la respuesta" />
+          <input type="text" name="oracion2" placeholder="2._Escribe la respuesta" />
+          <input type="text" name="oracion3" placeholder="3._Escribe la respuesta" />
+          <input type="text" name="oracion4" placeholder="4._Escribe la respuesta" />
+          <input type="text" name="oracion5" placeholder="5._Escribe la respuesta" />
+          <input type="text" name="oracion6" placeholder="6._Escribe la respuesta" />
+        </div>
+      </article>
+
+      <article>
+        <label for="padrenuestro">6–12. Escribe el Padrenuestro (Mateo 6:9–13):</label>
+        <textarea name="padrenuestro" rows="6" placeholder="Padre nuestro que estás en los cielos..."></textarea>
+      </article>
+
+      <article>
+        <label for="testimonio">¿Cuál ha sido el impacto de esta lección en tu vida de oración?</label>
+        <textarea name="testimonio" rows="4" placeholder="Escribe tu experiencia..."></textarea>
+      </article>
+
+      <article>
+        <label>13. ¿Estudiaste todos los días?</label>
+        <input type="checkbox" name="estudio_diario" /> Sí
+      </article>
+
+      <article>
+        <label>14. ¿Terminaste la lección?</label>
+        <input type="checkbox" name="leccion_terminada" /> Sí
+      </article>
+
+      <button type="button" onclick="calcularExamenOracion()">Calcular y Imprimir</button>
+      <div id="resultado"></div>
+    </form>
+
+    <!-- Modal de instrucciones -->
+    <div id="modal-instrucciones" class="modal">
+      <div class="modal-content">
+        <h2>Instrucciones del examen</h2>
+        <p>Ingresa tu nombre para comenzar.</p>
+        <label for="nombre">Nombre del alumno:</label>
+        <input type="text" id="nombre" />
+        <button onclick="iniciarExamenOracion()">Continuar</button>
+      </div>
+    </div>
+
+    <!-- Modal de bloqueo -->
+    <div id="modal-bloqueo" class="modal">
+      <div class="modal-content">
+        <h2>Examen ya presentado</h2>
+        <p id="mensaje-bloqueo"></p>
+        <label for="clave">Clave del facilitador:</label>
+        <input type="password" id="clave" />
+        <button onclick="desbloquearExamenOracion()">Desbloquear</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="leccion3-dia6.js"></script>
+</body>
+</html>

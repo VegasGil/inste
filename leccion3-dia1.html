@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lección 1 – Día 1</title>
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+<body>
+
+  <header>
+    <h1>Discipulado INSTE</h1>
+    <p>La base Bíblica del discipulado</p>
+    <a href="index.html" class="volver-menu">← Volver al menú</a>
+    <button class="toggle-mode" onclick="toggleMode()">🌙</button>
+  </header>
+    <main class="blog-leccion">
+    <article class="entrada">
+      <h2>Lección 3</h2>
+      <h1 class="titulo-dia">Día 1: ¿Qué es la oración? </h1>
+ <section class="bloque">
+  <!-- <h3>Lección 1</h3> -->
+  <!-- <h1 class="titulo-dia">Orientación</h1> -->
+  <p>Ayer consideramos los dos primeros requisitos del discipulado. ¿Te acuerdas cuáles eran?.</p>
+  <p>Ahora, veamos el tercer requisito: el compromiso total del discípulo con su Maestro.</p>
+</section>
+<!-- 
+<section class="bloque">
+  <h2>Acerca de esta lección</h2>
+  <p>En esta lección vamos a dar un vistazo a lo que nos espera en nuestro estudio de discipulado, los propósitos y objetivos de INSTE, cómo funciona nuestro instituto, lo que se requiere de ti como alumno y de tu grupo, y cómo puedes “individualizar” los estudios para aprovecharlos al máximo.</p>
+</section> -->
+
+<section class="bloque">
+  <!-- <h2>Lucas 9:23 Seguir a Cristo </h2> -->
+<div style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
+  <img src="leccion3.png" alt="" style="max-width: 100%; height: auto; display: block;">
+  <img src="leccion3_1.png" alt="" style="max-width: 100%; height: auto; display: block;">
+  <img src="leccion3_2.png" alt="" style="max-width: 100%; height: auto; display: block;">
+   <img src="leccion3_3.png" alt="" style="max-width: 100%; height: auto; display: block;">
+</div>
+</main>
+</article>
+<script src="script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const ruta = window.location.pathname;
+    const archivo = ruta.substring(ruta.lastIndexOf('/') + 1).replace('.html', '');
+    localStorage.setItem(archivo, 'vista');
+  });
+</script>
+</body>
+</html>
