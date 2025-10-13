@@ -13,7 +13,7 @@
         "Día 3: Señales del discípulo",
         "Día 4: Gran Comisión (exposición)",
         "Día 5: Gran Comisión (aplicación)",
-        "Día: exámen-2"
+        "Día 6: exámen-2"
       ],
       leccion3: [
         "Día 1: ¿Qué es la oración?",
@@ -21,7 +21,7 @@
         "Día 3: Alabanza y acción de gracias",
         "Día 4: Confesión e intercesión",
         "Día 5: Súplica y petición",
-        "Día: exámen3"
+        "Día 6: exámen_3"
       ],
     
   leccion4: [
@@ -29,7 +29,8 @@
     "Día 2: El bautismo en el Espíritu Santo",
     "Día 3: El ayuno y la oración",
     "Día 4: El ayuno general",
-    "Día 5: Repaso"
+    "Día 5: Repaso",
+    "Día 6: exámen_4"
   ],
   leccion5: [
     "Día 1: Orando en la voluntad de Dios",
