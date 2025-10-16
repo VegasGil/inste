@@ -5,7 +5,7 @@
         "Día 3: El grupo de INSTE",
         "Día 4: Cómo memorizar",
         "Día 5: Repaso",
-        "Día: exámen"
+        "Día 6: exámen-1"
       ],
       leccion2: [
         "Día 1: Relación con Cristo",
@@ -21,7 +21,7 @@
         "Día 3: Alabanza y acción de gracias",
         "Día 4: Confesión e intercesión",
         "Día 5: Súplica y petición",
-        "Día 6: exámen_3"
+        "Día 6: exámen-3"
       ],
     
   leccion4: [

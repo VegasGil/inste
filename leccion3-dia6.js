@@ -39,11 +39,11 @@ function calcularExamenOracion() {
 
   const respuestasCorrectas = [
     "alabanza",
-    "confesión",
-    "petición",
-    "intercesión",
     "acción de gracias",
-    "súplica"
+    "confesión",
+     "intercesión",
+     "súplica",
+    "petición"
   ];
 
   for (let i = 1; i <= 6; i++) {

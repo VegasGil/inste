@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lección 1 – Día 3</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Discipulado INSTE</h1>
+    <p>Caminando con Cristo, día a día</p>
+    <a href="index.html" class="volver-menu">← Volver al menú</a>
+    <button class="toggle-mode" onclick="toggleMode()">🌙</button>
+  </header>
+
+  <main class="blog-leccion">
+    <article class="entrada">
+      <h2>Lección 1</h2>
+      <h1 class="titulo-dia">Día 3: El grupo de INSTE</h1>
+
+      <section class="bloque">
+        <h3>¿Por qué es importante el grupo?</h3>
+        <p>El grupo de INSTE no es solo un espacio académico, sino una comunidad de discípulos que se apoyan mutuamente en su crecimiento espiritual. Compartir lo aprendido, orar juntos y rendir cuentas fortalece tu compromiso con Cristo.</p>
+      </section>
+
+      <section class="bloque">
+        <h3>Funciones del grupo</h3>
+        <ul>
+          <li><strong>Reunión semanal:</strong> Reflexión colectiva sobre lo estudiado durante la semana.</li>
+          <li><strong>Compañeros de crecimiento:</strong> Personas que te animan y te ayudan a alcanzar tus metas espirituales.</li>
+          <li><strong>Mentores:</strong> Líderes que guían con su ejemplo y experiencia.</li>
+        </ul>
+      </section>
+
+      <section class="bloque">
+        <h3>Participación activa</h3>
+        <p>Solo quienes han completado sus tareas pueden participar en el diálogo semanal. Tu compromiso diario impacta directamente en la calidad de tu experiencia grupal.</p>
+      </section>
+
+      <section class="bloque">
+        <h3>Reflexión</h3>
+        <p>¿Cómo puedes contribuir al crecimiento de tu grupo? ¿Qué esperas recibir de tus compañeros y líderes?</p>
+        <textarea rows="4" placeholder="Escribe tu reflexión aquí..."></textarea>
+      </section>
+
+      <section class="bloque">
+        <h3>Práctica</h3>
+        <p><strong>Escribe el nombre de tu compañero de crecimiento espiritual y una meta que compartirás con él esta semana:</strong></p>
+        <input type="text" placeholder="Nombre del compañero" />
+        <textarea rows="3" placeholder="Meta compartida..."></textarea>
+      </section>
+
+      <section class="bloque">
+        <h3>Mañana</h3>
+        <p>En el Día 4 aprenderás <strong>cómo memorizar las Escrituras</strong> y aplicar la Palabra de Dios en tu vida diaria.</p>
+        <a href="leccion1-dia4.html" class="boton-siguiente">→ Ir al Día 4</a>
+      </section>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      localStorage.setItem('leccion1-dia3', 'vista');
+    });
+  </script>
+</body>
+</html>

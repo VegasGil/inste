@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lección 1 – Día 5</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Discipulado INSTE</h1>
+    <p>Caminando con Cristo, día a día</p>
+    <a href="index.html" class="volver-menu">← Volver al menú</a>
+    <button class="toggle-mode" onclick="toggleMode()">🌙</button>
+  </header>
+
+  <main class="blog-leccion">
+    <article class="entrada">
+      <h2>Lección 1</h2>
+      <h1 class="titulo-dia">Día 5: Repaso</h1>
+
+      <section class="bloque">
+        <h3>Resumen de la semana</h3>
+        <p>Durante esta semana has explorado los fundamentos del programa INSTE. Has aprendido cómo estudiar, la importancia de la formación espiritual, el valor del grupo, y cómo memorizar las Escrituras.</p>
+      </section>
+
+      <section class="bloque">
+        <h3>Puntos clave</h3>
+        <ul>
+          <li>INSTE significa Instituto Teológico por Extensión.</li>
+          <li>El Primer Nivel se llama Formación Cristiana.</li>
+          <li>El estudio diario y la reunión semanal son esenciales.</li>
+          <li>La formación espiritual incluye oración, ayuno y disciplina personal.</li>
+          <li>El grupo de INSTE te ayuda a crecer en comunidad.</li>
+          <li>El lema de INSTE es <strong>2 Timoteo 2:15</strong>.</li>
+        </ul>
+      </section>
+
+      <section class="bloque">
+        <h3>Autoevaluación</h3>
+        <p><strong>¿Estudiaste todos los días esta semana?</strong></p>
+        <input type="checkbox" /> Sí
+
+        <p><strong>¿Terminaste toda la lección?</strong></p>
+        <input type="checkbox" /> Sí
+
+        <p><strong>¿Memorizaste el versículo de 2 Timoteo 2:15?</strong></p>
+        <textarea rows="3" placeholder="Escríbelo aquí de memoria..."></textarea>
+      </section>
+
+      <section class="bloque">
+        <h3>Preparación para el examen</h3>
+        <p>Revisa tus apuntes, reflexiona sobre lo aprendido y asegúrate de comprender los conceptos clave. El examen evaluará tu comprensión, tu compromiso y tu capacidad de aplicar lo aprendido.</p>
+        <a href="examen.html" class="boton-examen">→ Ir al examen</a>
+      </section>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      localStorage.setItem('leccion1-dia5', 'vista');
+    });
+  </script>
+</body>
+</html>
