@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lección 3 – Día 3</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Discipulado INSTE</h1>
+    <p>Caminando con Cristo, día a día</p>
+    <a href="index.html" class="volver-menu">← Volver al menú</a>
+    <button class="toggle-mode" onclick="toggleMode()">🌙</button>
+  </header>
+
+  <main class="blog-leccion">
+    <article class="entrada">
+      <h2>Lección 3</h2>
+      <h1 class="titulo-dia">Día 3: Alabanza y acción de gracias</h1>
+
+      <section class="bloque">
+        <h3>¿Qué es la alabanza?</h3>
+        <p>La alabanza es reconocer quién es Dios: su grandeza, su santidad, su poder y su amor. No depende de nuestras circunstancias, sino de su carácter eterno. Alabar es exaltar a Dios por lo que Él es.</p>
+      </section>
+
+      <section class="bloque">
+        <h3>¿Qué es la acción de gracias?</h3>
+        <p>La acción de gracias es expresar gratitud por lo que Dios ha hecho. Es una actitud que transforma el corazón, nos libera de la queja y nos llena de gozo. Agradecer es reconocer su fidelidad en nuestra vida.</p>
+      </section>
+
+      <section class="bloque">
+        <h3>Ejemplos bíblicos</h3>
+        <ul>
+          <li><strong>Salmos:</strong> “Entrad por sus puertas con acción de gracias, por sus atrios con alabanza.” (Salmo 100:4)</li>
+          <li><strong>Jesús:</strong> Daba gracias antes de multiplicar los panes (Juan 6:11).</li>
+          <li><strong>Pablo:</strong> Enseñó a dar gracias en todo (1 Tesalonicenses 5:18).</li>
+        </ul>
+      </section>
+
+      <section class="bloque">
+        <h3>Reflexión</h3>
+        <p>¿Qué motivos tienes hoy para alabar a Dios? ¿Por qué puedes darle gracias, incluso en medio de dificultades?</p>
+        <textarea rows="4" placeholder="Escribe tu reflexión aquí..."></textarea>
+      </section>
+
+      <section class="bloque">
+        <h3>Práctica</h3>
+        <p><strong>Haz una lista de 5 cosas por las que estás agradecido hoy:</strong></p>
+        <ul>
+          <li><input type="text" placeholder="Ejemplo: Mi familia" /></li>
+          <li><input type="text" placeholder="Ejemplo: La provisión diaria" /></li>
+          <li><input type="text" placeholder="Ejemplo: La salvación en Cristo" /></li>
+          <li><input type="text" placeholder="Ejemplo: La comunidad de fe" /></li>
+          <li><input type="text" placeholder="Ejemplo: La oportunidad de aprender" /></li>
+        </ul>
+      </section>
+
+      <section class="bloque">
+        <h3>Mañana</h3>
+        <p>En el Día 4 aprenderás sobre la <strong>confesión e intercesión</strong> como parte vital de tu vida de oración.</p>
+        <a href="leccion3-dia4.html" class="boton-siguiente">→ Ir al Día 4</a>
+      </section>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      localStorage.setItem('leccion3-dia3', 'vista');
+    });
+  </script>
+</body>
+</html>

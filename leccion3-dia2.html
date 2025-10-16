@@ -3,51 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lección 1 – Día 1</title>
+  <title>Lección 3 – Día 2</title>
   <link rel="stylesheet" href="style.css" />
-  
 </head>
 <body>
 
   <header>
     <h1>Discipulado INSTE</h1>
-    <p>La base Bíblica del discipulado</p>
+    <p>Caminando con Cristo, día a día</p>
     <a href="index.html" class="volver-menu">← Volver al menú</a>
     <button class="toggle-mode" onclick="toggleMode()">🌙</button>
   </header>
-    <main class="blog-leccion">
+
+  <main class="blog-leccion">
     <article class="entrada">
       <h2>Lección 3</h2>
-      <h1 class="titulo-dia">Día 2: La vida de oración de Jesús  </h1>
- <section class="bloque">
-  <!-- <h3>Lección 1</h3> -->
-  <!-- <h1 class="titulo-dia">Orientación</h1> -->
-  <!-- <p>Ayer consideramos los dos primeros requisitos del discipulado. ¿Te acuerdas cuáles eran?.</p>
-  <p>Ahora, veamos el tercer requisito: el compromiso total del discípulo con su Maestro.</p> -->
-</section>
-<!-- 
-<section class="bloque">
-  <h2>Acerca de esta lección</h2>
-  <p>En esta lección vamos a dar un vistazo a lo que nos espera en nuestro estudio de discipulado, los propósitos y objetivos de INSTE, cómo funciona nuestro instituto, lo que se requiere de ti como alumno y de tu grupo, y cómo puedes “individualizar” los estudios para aprovecharlos al máximo.</p>
-</section> -->
+      <h1 class="titulo-dia">Día 2: La vida de oración de Jesús</h1>
 
-<section class="bloque">
-  <!-- <h2>Lucas 9:23 Seguir a Cristo </h2> -->
-<div style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
-  <img src="leccion3.png" alt="" style="max-width: 100%; height: auto; display: block;">
-  <img src="leccion3_1.png" alt="" style="max-width: 100%; height: auto; display: block;">
-  <img src="leccion3_2.png" alt="" style="max-width: 100%; height: auto; display: block;">
-   <img src="leccion3_3.png" alt="" style="max-width: 100%; height: auto; display: block;">
-</div>
-</main>
-</article>
-<script src="script.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const ruta = window.location.pathname;
-    const archivo = ruta.substring(ruta.lastIndexOf('/') + 1).replace('.html', '');
-    localStorage.setItem(archivo, 'vista');
-  });
-</script>
+      <section class="bloque">
+        <h3>Jesús como modelo de oración</h3>
+        <p>Jesús no solo enseñó sobre la oración, la vivió intensamente. Su vida estuvo marcada por momentos de comunión profunda con el Padre, en todo tipo de circunstancias.</p>
+      </section>
+
+      <section class="bloque">
+        <h3>Ejemplos bíblicos</h3>
+        <ul>
+          <li><strong>Antes de tomar decisiones:</strong> Oró toda la noche antes de elegir a sus discípulos (Lucas 6:12).</li>
+          <li><strong>En momentos de angustia:</strong> Oró en Getsemaní antes de ir a la cruz (Mateo 26:36–44).</li>
+          <li><strong>En gratitud:</strong> Oró dando gracias antes de multiplicar los panes (Juan 6:11).</li>
+          <li><strong>En intimidad:</strong> Se apartaba a lugares solitarios para orar (Marcos 1:35).</li>
+        </ul>
+      </section>
+
+      <section class="bloque">
+        <h3>Características de su oración</h3>
+        <ul>
+          <li>Era constante y prioritaria.</li>
+          <li>Era íntima y sincera.</li>
+          <li>Era obediente y confiada.</li>
+        </ul>
+      </section>
+
+      <section class="bloque">
+        <h3>Reflexión</h3>
+        <p>¿Qué te enseña la vida de oración de Jesús sobre tu propia práctica? ¿Qué hábitos puedes adoptar?</p>
+        <textarea rows="4" placeholder="Escribe tu reflexión aquí..."></textarea>
+      </section>
+
+      <section class="bloque">
+        <h3>Práctica</h3>
+        <p><strong>Elige un momento específico del día para orar como lo hacía Jesús. Escríbelo aquí:</strong></p>
+        <input type="text" placeholder="Ejemplo: 6:30 a.m. antes de comenzar el día" />
+        <p><strong>¿Qué tipo de oración harás en ese momento?</strong></p>
+        <textarea rows="3" placeholder="Ejemplo: Gratitud, intercesión, entrega..."></textarea>
+      </section>
+
+      <section class="bloque">
+        <h3>Mañana</h3>
+        <p>En el Día 3 aprenderás sobre la <strong>alabanza y acción de gracias</strong> como expresiones esenciales en la oración.</p>
+        <a href="leccion3-dia3.html" class="boton-siguiente">→ Ir al Día 3</a>
+      </section>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      localStorage.setItem('leccion3-dia2', 'vista');
+    });
+  </script>
 </body>
 </html>

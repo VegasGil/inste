@@ -3,51 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lección 1 – Día 1</title>
+  <title>Lección 3 – Día 1</title>
   <link rel="stylesheet" href="style.css" />
-  
 </head>
 <body>
 
   <header>
     <h1>Discipulado INSTE</h1>
-    <p>La base Bíblica del discipulado</p>
+    <p>Caminando con Cristo, día a día</p>
     <a href="index.html" class="volver-menu">← Volver al menú</a>
     <button class="toggle-mode" onclick="toggleMode()">🌙</button>
   </header>
-    <main class="blog-leccion">
+
+  <main class="blog-leccion">
     <article class="entrada">
       <h2>Lección 3</h2>
-      <h1 class="titulo-dia">Día 1: ¿Qué es la oración? </h1>
- <section class="bloque">
-  <!-- <h3>Lección 1</h3> -->
-  <!-- <h1 class="titulo-dia">Orientación</h1> -->
-  <p>Ayer consideramos los dos primeros requisitos del discipulado. ¿Te acuerdas cuáles eran?.</p>
-  <p>Ahora, veamos el tercer requisito: el compromiso total del discípulo con su Maestro.</p>
-</section>
-<!-- 
-<section class="bloque">
-  <h2>Acerca de esta lección</h2>
-  <p>En esta lección vamos a dar un vistazo a lo que nos espera en nuestro estudio de discipulado, los propósitos y objetivos de INSTE, cómo funciona nuestro instituto, lo que se requiere de ti como alumno y de tu grupo, y cómo puedes “individualizar” los estudios para aprovecharlos al máximo.</p>
-</section> -->
+      <h1 class="titulo-dia">Día 1: ¿Qué es la oración?</h1>
 
-<section class="bloque">
-  <!-- <h2>Lucas 9:23 Seguir a Cristo </h2> -->
-<div style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
-  <img src="leccion3.png" alt="" style="max-width: 100%; height: auto; display: block;">
-  <img src="leccion3_1.png" alt="" style="max-width: 100%; height: auto; display: block;">
-  <img src="leccion3_2.png" alt="" style="max-width: 100%; height: auto; display: block;">
-   <img src="leccion3_3.png" alt="" style="max-width: 100%; height: auto; display: block;">
-</div>
-</main>
-</article>
-<script src="script.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const ruta = window.location.pathname;
-    const archivo = ruta.substring(ruta.lastIndexOf('/') + 1).replace('.html', '');
-    localStorage.setItem(archivo, 'vista');
-  });
-</script>
+      <section class="bloque">
+        <h3>Introducción</h3>
+        <p>La oración es el corazón del discipulado. Es el medio por el cual nos comunicamos con Dios, expresamos nuestra adoración, presentamos nuestras necesidades y escuchamos su voz. No es solo hablar, es también relacionarse.</p>
+      </section>
+
+      <section class="bloque">
+        <h3>Definición bíblica</h3>
+        <p>Orar es abrir el corazón a Dios como a un amigo. Es confiar en su presencia, depender de su guía y buscar su voluntad. Jesús mismo oraba constantemente, mostrando que la oración es vital para todo creyente.</p>
+      </section>
+
+      <section class="bloque">
+        <h3>Propósitos de la oración</h3>
+        <ul>
+          <li><strong>Comunión:</strong> Estar cerca de Dios y conocerlo mejor.</li>
+          <li><strong>Transformación:</strong> Ser moldeado por su presencia.</li>
+          <li><strong>Intercesión:</strong> Orar por otros y por el mundo.</li>
+          <li><strong>Dependencia:</strong> Reconocer que sin Él nada podemos hacer.</li>
+        </ul>
+      </section>
+
+      <section class="bloque">
+        <h3>Reflexión</h3>
+        <p>¿Cómo ha sido tu vida de oración últimamente? ¿La consideras una rutina o una relación viva?</p>
+        <textarea rows="4" placeholder="Escribe tu reflexión aquí..."></textarea>
+      </section>
+
+      <section class="bloque">
+        <h3>Práctica</h3>
+        <p><strong>Escribe una oración personal a Dios expresando tu deseo de crecer en comunión con Él:</strong></p>
+        <textarea rows="4" placeholder="Ejemplo: Señor, enséñame a orar con sinceridad y fe..."></textarea>
+      </section>
+
+      <section class="bloque">
+        <h3>Mañana</h3>
+        <p>En el Día 2 estudiarás la <strong>vida de oración de Jesús</strong> y aprenderás de su ejemplo.</p>
+        <a href="leccion3-dia2.html" class="boton-siguiente">→ Ir al Día 2</a>
+      </section>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      localStorage.setItem('leccion3-dia1', 'vista');
+    });
+  </script>
 </body>
 </html>

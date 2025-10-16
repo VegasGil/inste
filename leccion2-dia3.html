@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lección 2 – Día 3</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Discipulado INSTE</h1>
+    <p>Caminando con Cristo, día a día</p>
+    <a href="index.html" class="volver-menu">← Volver al menú</a>
+    <button class="toggle-mode" onclick="toggleMode()">🌙</button>
+  </header>
+
+  <main class="blog-leccion">
+    <article class="entrada">
+      <h2>Lección 2</h2>
+      <h1 class="titulo-dia">Día 3: Señales del discípulo</h1>
+
+      <section class="bloque">
+        <h3>¿Cómo se reconoce a un discípulo?</h3>
+        <p>Jesús enseñó que sus verdaderos discípulos se distinguen por su fruto, su amor y su obediencia. No basta con decir que seguimos a Cristo; nuestras acciones deben reflejarlo.</p>
+      </section>
+
+      <section class="bloque">
+        <h3>Señales clave según la Biblia</h3>
+        <ul>
+          <li><strong>Amor:</strong> “En esto conocerán todos que sois mis discípulos, si tuviereis amor los unos por los otros.” (Juan 13:35)</li>
+          <li><strong>Fruto del Espíritu:</strong> Amor, gozo, paz, paciencia, benignidad, bondad, fe, mansedumbre, dominio propio.</li>
+          <li><strong>Obediencia:</strong> “Si permanecéis en mi palabra, seréis verdaderamente mis discípulos.” (Juan 8:31)</li>
+        </ul>
+      </section>
+
+      <section class="bloque">
+        <h3>Reflexión</h3>
+        <p>¿Qué señales están presentes en tu vida? ¿Qué áreas necesitas fortalecer para reflejar mejor a Cristo?</p>
+        <textarea rows="4" placeholder="Escribe tu reflexión aquí..."></textarea>
+      </section>
+
+      <section class="bloque">
+        <h3>Práctica</h3>
+        <p><strong>Marca las señales que has visto en tu vida esta semana:</strong></p>
+        <ul>
+          <li><input type="checkbox" /> Amor hacia otros</li>
+          <li><input type="checkbox" /> Paciencia en momentos difíciles</li>
+          <li><input type="checkbox" /> Obediencia a la Palabra</li>
+          <li><input type="checkbox" /> Dominio propio</li>
+          <li><input type="checkbox" /> Servicio a alguien en necesidad</li>
+        </ul>
+      </section>
+
+      <section class="bloque">
+        <h3>Mañana</h3>
+        <p>En el Día 4 estudiarás la <strong>Gran Comisión</strong> y cómo Jesús nos envía a hacer discípulos en todo lugar.</p>
+        <a href="leccion2-dia4.html" class="boton-siguiente">→ Ir al Día 4</a>
+      </section>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      localStorage.setItem('leccion2-dia3', 'vista');
+    });
+  </script>
+</body>
+</html>
