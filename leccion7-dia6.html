@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Examen 10 – Me seréis testigos</title>
+  <link rel="stylesheet" href="examen.css" />
+</head>
+<body>
+  <div class="examen-container">
+    <div class="exame">
+      <div class="encabezado">
+        <img src="image.png" alt="INSTE" class="logo" />
+        <h1>El Discipulado 1</h1>
+      </div>
+      <h2>Examen 7: “Me seréis testigo 2 Parte”</h2>
+      <h3 id="nombre-impreso"></h3>
+      <p><em>Selecciona la respuesta correcta o completa según corresponda.</em></p>
+    </div>
+
+    <form id="form-examen">
+      <!-- Preguntas tipo test -->
+      <article><label>1. Cuando testificas a un no cristiano, debes:</label>
+        <select name="p1">
+          <option value="">Selecciona</option>
+          <option value="A">A. 	llevar una Biblia grande contigo para que sepa que eres creyente.</option>
+          <option value="B">B. Citar o leer solamente la porción de un versículo que tiene que ver con tu argumento.</option>
+          <option value="C">C. Impresionarle con tu conocimiento bíblico para que acepte lo que dices.</option>
+          <option value="D">D. 	llevar las tarjetas de versículos contigo para usar en vez de la Biblia.</option>
+        </select>
+      </article>
+
+      <article><label>2. Si una persona no quiere aceptar a Cristo:</label>
+        <select name="p2">
+          <option value="">Selecciona</option>
+          <option value="A">A. pídele permiso para orar por él/ella en ese momento, y si está de acuerdo, ora que el Señor 	le bendiga y le dirija, y si no está conforme, dale las gracias por su atención</option>
+          <option value="B">B. Siempre insiste un poco más.</option>
+          <option value="C">C. Rreprende en voz alta al diablo que está estorbando su mente.</option>
+          <option value="D">D. Ora que el Espíritu Santo le muestre su necesidad</option>
+        </select>
+      </article>
+
+      <article><label>3. ¿Qué debemos hacer con las preguntas u objeciones de la gente inconversa?</label>
+        <select name="p3">
+          <option value="">Selecciona</option>
+          <option value="A">A. No hacerles caso, pues la mayoría son tácticas del enemigo para desviarnos del objetivo, 	esto es, proclamar la Palabra de Dios.</option>
+          <option value="B">B. Contestarlas todas en aquel momento, pues nuestro propósito es defender la verdad frente a 	los ataques de los enemigos de la cruz.</option>
+          <option value="C">C. En el momento debido, contestarles con tacto y mansedumbre.</option>
+          <option value="D">D. Regañar a la persona por tratar de esquivar su responsabilidad delante de Dios.</option>
+        </select>
+      </article>
+
+      <!-- Preguntas abiertas -->
+      <article><label>4–6. Si una persona quiere aceptar a Cristo, ¿cómo orarías con ella?</label>
+        <textarea name="oracion" rows="3" placeholder="Escribe tu respuesta..."></textarea>
+      </article>
+
+      <article><label>7–9. ¿Cómo ayudarías a un nuevo creyente en sus primeros pasos del crecimiento espiritual? Identifica por lo menos tres actividades que harías con el/ella.</label>
+        <textarea name="ayuda" rows="3" placeholder="Escribe tres actividades..."></textarea>
+      </article>
+
+      <article><label>10. ¿Cuál es la pregunta más difícil de contestar, según tu parecer?</label>
+        <textarea name="dificil" rows="2" placeholder="Respuesta libre..."></textarea>
+      </article>
+
+      <article><label>11–15. Escribe de memoria el versículo de esta semana.</label>
+        <textarea name="versiculo" rows="4" placeholder="Escribe el versículo..."></textarea>
+      </article>
+
+      <!-- Confirmaciones -->
+      <article><label>16. ¿Estudiaste todos los días?</label>
+        <input type="checkbox" name="extra1" />
+      </article>
+
+      <article><label>17. ¿Terminaste la lección?</label>
+        <input type="checkbox" name="extra2" />
+      </article>
+
+      <button type="button" onclick="calcularExamen()">Calcular y Imprimir</button>
+      <div id="resultado"></div>
+    </form>
+
+    <!-- Modal de instrucciones -->
+    <div id="modal-instrucciones" class="modal">
+      <div class="modal-content">
+        <h2>Instrucciones del examen</h2>
+        <p>Selecciona la respuesta correcta o completa según corresponda.<br>Ingresa tu nombre para continuar.</p>
+        <label for="nombre">Nombre del alumno:</label>
+        <input type="text" id="nombre" />
+        <button onclick="iniciarExamen()">Continuar</button>
+      </div>
+    </div>
+
+    <!-- Modal de bloqueo -->
+    <div id="modal-bloqueo" class="modal">
+      <div class="modal-content">
+        <h2>Examen ya presentado</h2>
+        <p id="mensaje-bloqueo"></p>
+        <label for="clave">Clave del facilitador para desbloquear:</label>
+        <input type="password" id="clave" />
+        <button onclick="desbloquearExamen()">Desbloquear</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="leccion7-dia6.js"></script>
+</body>
+</html>

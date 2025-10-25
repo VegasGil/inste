@@ -53,7 +53,8 @@
     "Día 2: Tomar la decisión",
     "Día 3: El seguimiento",
     "Día 4: Cómo contestar las objeciones",
-    "Día 5: Evangelizando en el mundo moderno"
+    "Día 5: Evangelizando en el mundo moderno",
+    "Día 6: exámen_7"
   ],
   leccion8: [
     "Día 1: Cómo Dios nos ve",

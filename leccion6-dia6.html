@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Examen 9 – Me seréis testigos</title>
+  <link rel="stylesheet" href="examen.css" />
+</head>
+<body>
+  <div class="examen-container">
+    <div class="exame">
+      <div class="encabezado">
+        <img src="image.png" alt="INSTE" class="logo" />
+        <h1>El Discipulado 1</h1>
+      </div>
+      <h2>Examen 9: “Me seréis testigos…”</h2>
+      <h3 id="nombre-impreso"></h3>
+      <p><em>Completa los principios del plan de salvación y tu testimonio personal.</em></p>
+    </div>
+
+    <form id="form-examen">
+      <!-- Principios del plan de salvación -->
+      <h3>1–14. El plan de salvación</h3>
+      <p>Cada principio vale 2 puntos: uno por el contenido y uno por el versículo.</p>
+
+      <div class="principios">
+        <!-- Principios 1 al 7 -->
+        <div><label>1.</label><textarea name="principio1" rows="3" placeholder="Escribe el principio..."></textarea><input style="display: none;" type="text" name="versiculo1" placeholder="" /></div>
+        <div><label>2.</label><textarea   name="principio2" rows="3"></textarea><input style="display: none;"  type="text" name="versiculo2" /></div>
+        <div><label>3.</label><textarea s  name="principio3" rows="3"></textarea><input style="display: none;" type="text" name="versiculo3" /></div>
+        <div><label>4.</label><textarea   name="principio4" rows="3"></textarea><input style="display: none;" type="text" name="versiculo4" /></div>
+        <div><label>5.</label><textarea  name="principio5" rows="3"></textarea><input style="display: none;" type="text" name="versiculo5" /></div>
+        <div><label>6.</label><textarea   name="principio6" rows="3"></textarea><input style="display: none;" type="text" name="versiculo6" /></div>
+        <div><label>7.</label><textarea  name="principio7" rows="3"></textarea><input style="display: none;" type="text" name="versiculo7" /></div>
+      </div>
+
+      <!-- Testimonio personal -->
+      <h3>15–26. Tu testimonio personal</h3>
+      <p>Escribe tu testimonio como si hablaras con un inconverso. Se evaluará según los criterios del examen.</p>
+      <textarea name="testimonio" rows="6" placeholder="Escribe tu testimonio aquí..."></textarea>
+
+      <!-- Confirmaciones -->
+      <h3>Confirmaciones</h3>
+      <label>27. ¿Estudiaste todos los días?</label>
+      <input type="checkbox" name="extra1" />
+
+      <label>28. ¿Terminaste la lección?</label>
+      <input type="checkbox" name="extra2" />
+
+      <button type="button" onclick="calcularExamen()">Calcular y Imprimir</button>
+      <div id="resultado"></div>
+    </form>
+
+    <!-- Modal de instrucciones -->
+    <div id="modal-instrucciones" class="modal">
+      <div class="modal-content">
+        <h2>Instrucciones del examen</h2>
+        <p>Completa los principios y tu testimonio. Ingresa tu nombre para comenzar.</p>
+        <label for="nombre">Nombre del alumno:</label>
+        <input type="text" id="nombre" />
+        <button onclick="iniciarExamen()">Continuar</button>
+      </div>
+    </div>
+
+    <!-- Modal de bloqueo -->
+    <div id="modal-bloqueo" class="modal">
+      <div class="modal-content">
+        <h2>Examen ya presentado</h2>
+        <p id="mensaje-bloqueo"></p>
+        <label for="clave">Clave del facilitador para desbloquear:</label>
+        <input type="password" id="clave" />
+        <button onclick="desbloquearExamen()">Desbloquear</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="leccion6-dia6.js"></script>
+</body>
+</html>
