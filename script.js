@@ -37,14 +37,16 @@
     "Día 2: Descubriendo la voluntad de Dios",
     "Día 3: Utilizando una lista de oración",
     "Día 4: Grupos de oración",
-    "Día 5: Repaso de la unidad"
+    "Día 5: Repaso de la unidad",
+     "Día 6: exámen_5"
   ],
   leccion6: [
     "Día 1: Tu mundo personal",
     "Día 2: El crecimiento espiritual y la evangelización",
     "Día 3: Cómo usar tu testimonio personal",
     "Día 4: Cómo explicar el plan de salvación",
-    "Día 5: Repaso de la lección"
+    "Día 5: Repaso de la lección",
+     "Día 6: exámen_6"
   ],
   leccion7: [
     "Día 1: Cómo usar las Escrituras en la evangelización",

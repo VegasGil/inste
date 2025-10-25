@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lección 5 – Día 3</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Discipulado INSTE</h1>
+    <p>Caminando con Cristo, día a día</p>
+    <a href="index.html" class="volver-menu">← Volver al menú</a>
+    <button class="toggle-mode" onclick="toggleMode()">🌙</button>
+  </header>
+
+  <main class="blog-leccion">
+    <article class="entrada">
+      <h2>Lección 5</h2>
+      <h1 class="titulo-dia">Día 3: Utilizando una lista de oración</h1>
+
+      <section class="bloque">
+        <h3>¿Qué es una lista de oración?</h3>
+        <p>Es una herramienta práctica que te ayuda a recordar, organizar y dar seguimiento a tus tiempos de oración. No se trata de limitar la oración, sino de enfocarla con propósito y fidelidad.</p>
+      </section>
+
+      <section class="bloque">
+        <h3>Beneficios de usar una lista</h3>
+        <ul>
+          <li><strong>Constancia:</strong> Evita olvidar personas o situaciones importantes.</li>
+          <li><strong>Enfoque:</strong> Te ayuda a orar con intención y claridad.</li>
+          <li><strong>Seguimiento:</strong> Puedes registrar respuestas y cambios.</li>
+        </ul>
+      </section>
+
+      <section class="bloque">
+        <h3>Tipos de categorías</h3>
+        <ul>
+          <li>Familia</li>
+          <li>Ministerio</li>
+          <li>Salvación de personas</li>
+          <li>Sanidad</li>
+          <li>Decisiones personales</li>
+          <li>Nación y autoridades</li>
+        </ul>
+      </section>
+
+      <section class="bloque">
+        <h3>Reflexión</h3>
+        <p>¿Cómo organizas actualmente tu tiempo de oración? ¿Qué categoría necesitas fortalecer?</p>
+        <textarea rows="4" placeholder="Escribe tu reflexión aquí..."></textarea>
+      </section>
+
+      <section class="bloque">
+        <h3>Práctica</h3>
+        <p><strong>Escribe una lista de oración con al menos cinco peticiones específicas:</strong></p>
+        <ul>
+          <li><input type="text" placeholder="Ejemplo: Por la salvación de mi hermano..." /></li>
+          <li><input type="text" placeholder="Ejemplo: Por sabiduría en mi trabajo..." /></li>
+          <li><input type="text" placeholder="Ejemplo: Por sanidad de una amiga..." /></li>
+          <li><input type="text" placeholder="Ejemplo: Por dirección en mi ministerio..." /></li>
+          <li><input type="text" placeholder="Ejemplo: Por paz en mi país..." /></li>
+        </ul>
+      </section>
+
+      <section class="bloque">
+        <h3>Mañana</h3>
+        <p>En el Día 4 aprenderás sobre los <strong>grupos de oración</strong> y cómo fortalecen la vida espiritual en comunidad.</p>
+        <a href="leccion5-dia4.html" class="boton-siguiente">→ Ir al Día 4</a>
+      </section>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      localStorage.setItem('leccion5-dia3', 'vista');
+    });
+  </script>
+</body>
+</html>

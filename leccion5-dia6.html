@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Examen 8 – Orando en el Espíritu</title>
+  <link rel="stylesheet" href="examen.css" />
+</head>
+<body>
+  <div class="examen-container">
+    <div class="exame">
+      <div class="encabezado">
+        <img src="image.png" alt="INSTE" class="logo" />
+        <h1>El Discipulado 1</h1>
+      </div>
+      <h2>Examen 8: Orando en el Espíritu</h2>
+      <h3 id="nombre-impreso"></h3>
+      <p><em>Selecciona la respuesta correcta o completa según corresponda.</em></p>
+    </div>
+
+    <form id="form-examen">
+      <!-- Preguntas tipo test -->
+      <article><label>1. Orar en el Espíritu significa:</label>
+        <select name="p1">
+          <option value="">Selecciona</option>
+          <option value="A">A. siempre orar en lenguas</option>
+          <option value="B">B. orar silenciosamente</option>
+          <option value="C">C. orar de acuerdo con la voluntad de Dios</option>
+          <option value="D">D. ser bautizado en el Espíritu Santo</option>
+        </select>
+      </article>
+
+      <article><label>2. La diferencia entre las oraciones “siempre eficaces” y las “pendientes” es que:</label>
+        <select name="p2">
+          <option value="">Selecciona</option>
+          <option value="A">A. Dios no contesta las oraciones “pendientes” pero sí las “siempre eficaces”</option>
+          <option value="B">B. 	Las oraciones “siempre eficaces” se conforman a la voluntad de Dios, pero las “pendientes” dependan de la voluntad de Dios en una situación particular.</option>
+          <option value="C">C. 	Las “pendientes” son oraciones “telegramas” mientras las “siempre eficaces” son de 	carácter intenso.</option>
+          <option value="D">D. No hay diferencia</option>
+        </select>
+      </article>
+
+      <article><label>3. ¿Cuál de las siguientes no es una de las pautas que propusimos para descubrir la voluntad de Dios? (Pero puede ser de mucho provecho si es guiado por el Espíritu.)</label>
+        <select name="p3">
+          <option value="">Selecciona</option>
+          <option value="A">A. La Palabra de Dios</option>
+          <option value="B">B. Las circunstancias</option>
+          <option value="C">C. La voz del Espíritu Santo</option>
+          <option value="D">D. El consejo de tus amigos</option>
+        </select>
+      </article>
+
+      <article><label>4. Una lista de oración en tu diario espiritual sirve para:</label>
+        <select name="p4">
+          <option value="">Selecciona</option>
+          <option value="A">A. confundirte</option>
+          <option value="B">B. recordarte tus motivos de oración</option>
+          <option value="C">C. que todos oren por lo mismo</option>
+          <option value="D">D. nada</option>
+        </select>
+      </article>
+
+      <article><label>5. La oración unida:</label>
+        <select name="p5">
+          <option value="">Selecciona</option>
+          <option value="A">A. no tiene apoyo en ningún lugar del Nuevo Testamento</option>
+          <option value="B">B. fue la práctica de la iglesia en el libro de Hechos.</option>
+          <option value="C">C. no es apropiada en la clase de INSTE.</option>
+          <option value="D">D. no se puede practicar cuando hay muchos hermanos reunidos en el mismo lugar.</option>
+        </select>
+      </article>
+
+      <!-- Versículo -->
+      <article>
+        <label>6–10. Escribe de memoria II Pedro 3:9:</label>
+        <textarea name="versiculo" rows="4" placeholder="Escribe aquí el versículo..."></textarea>
+      </article>
+
+      <!-- Confirmaciones -->
+      <article><label>11. ¿Estudiaste todos los días?</label>
+        <input type="checkbox" name="extra1" />
+      </article>
+
+      <article><label>12. ¿Terminaste la lección?</label>
+        <input type="checkbox" name="extra2" />
+      </article>
+
+      <button type="button" onclick="calcularExamen()">Calcular y Imprimir</button>
+      <div id="resultado"></div>
+    </form>
+
+    <!-- Modal de instrucciones -->
+    <div id="modal-instrucciones" class="modal">
+      <div class="modal-content">
+        <h2>Instrucciones del examen</h2>
+        <p>Selecciona la respuesta correcta o completa según corresponda.<br>Ingresa tu nombre para continuar.</p>
+        <label for="nombre">Nombre del alumno:</label>
+        <input type="text" id="nombre" />
+        <button onclick="iniciarExamen()">Continuar</button>
+      </div>
+    </div>
+
+    <!-- Modal de bloqueo -->
+    <div id="modal-bloqueo" class="modal">
+      <div class="modal-content">
+        <h2>Examen ya presentado</h2>
+        <p id="mensaje-bloqueo"></p>
+        <label for="clave">Clave del facilitador para desbloquear:</label>
+        <input type="password" id="clave" />
+        <button onclick="desbloquearExamen()">Desbloquear</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="leccion5-dia6.js"></script>
+</body>
+</html>

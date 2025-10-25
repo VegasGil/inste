@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lección 5 – Día 5</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Discipulado INSTE</h1>
+    <p>Caminando con Cristo, día a día</p>
+    <a href="index.html" class="volver-menu">← Volver al menú</a>
+    <button class="toggle-mode" onclick="toggleMode()">🌙</button>
+  </header>
+
+  <main class="blog-leccion">
+    <article class="entrada">
+      <h2>Lección 5</h2>
+      <h1 class="titulo-dia">Día 5: Repaso de la unidad</h1>
+
+      <section class="bloque">
+        <h3>Resumen de la lección</h3>
+        <ul>
+          <li><strong>Día 1:</strong> Aprendiste a orar en la voluntad de Dios, buscando su propósito antes que tus deseos.</li>
+          <li><strong>Día 2:</strong> Descubriste cómo discernir la voluntad divina a través de la Palabra, la oración y la paz interior.</li>
+          <li><strong>Día 3:</strong> Aprendiste a usar una lista de oración para mantener constancia y enfoque.</li>
+          <li><strong>Día 4:</strong> Exploraste el valor de los grupos de oración como espacios de comunión, intercesión y crecimiento espiritual.</li>
+        </ul>
+      </section>
+
+      <section class="bloque">
+        <h3>Autoevaluación</h3>
+        <p><strong>Marca los temas que comprendiste con claridad:</strong></p>
+        <ul>
+          <li><input type="checkbox" /> Orar en la voluntad de Dios</li>
+          <li><input type="checkbox" /> Discernir la voluntad divina</li>
+          <li><input type="checkbox" /> Usar una lista de oración</li>
+          <li><input type="checkbox" /> Participar en grupos de oración</li>
+        </ul>
+      </section>
+
+      <section class="bloque">
+        <h3>Reflexión final</h3>
+        <p>¿Qué enseñanza de esta unidad impactó más tu vida? ¿Cómo la aplicarás en tu caminar diario?</p>
+        <textarea rows="4" placeholder="Escribe tu reflexión aquí..."></textarea>
+      </section>
+
+      <section class="bloque">
+        <h3>Acceso al examen</h3>
+        <p>Ahora que has repasado los contenidos, estás listo para presentar el <strong>examen de la lección 5</strong>.</p>
+        <a href="examen5.html" class="boton-examen">📝 Ir al examen</a>
+      </section>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      localStorage.setItem('leccion5-dia5', 'vista');
+    });
+  </script>
+</body>
+</html>

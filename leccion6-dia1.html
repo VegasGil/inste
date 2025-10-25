@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lección 6 – Día 1</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Discipulado INSTE</h1>
+    <p>Caminando con Cristo, día a día</p>
+    <a href="index.html" class="volver-menu">← Volver al menú</a>
+    <button class="toggle-mode" onclick="toggleMode()">🌙</button>
+  </header>
+
+  <main class="blog-leccion">
+    <article class="entrada">
+      <h2>Lección 6</h2>
+      <h1 class="titulo-dia">Día 1: Tu mundo personal</h1>
+
+      <section class="bloque">
+        <h3>¿Qué es tu mundo personal?</h3>
+        <p>Es el entorno donde vives, trabajas, estudias y te relacionas. Incluye tu familia, amigos, vecinos, compañeros y cualquier persona con la que interactúas regularmente. Dios te ha colocado allí con un propósito: ser luz y sal.</p>
+      </section>
+
+      <section class="bloque">
+        <h3>Texto clave</h3>
+        <blockquote>“Vosotros sois la luz del mundo... Así alumbre vuestra luz delante de los hombres...” (Mateo 5:14–16)</blockquote>
+        <p>Este pasaje nos recuerda que nuestra vida debe reflejar a Cristo en todo lugar donde estemos.</p>
+      </section>
+
+      <section class="bloque">
+        <h3>Características de tu mundo personal</h3>
+        <ul>
+          <li><strong>Es único:</strong> Nadie tiene exactamente las mismas relaciones que tú.</li>
+          <li><strong>Es dinámico:</strong> Cambia con el tiempo, pero siempre ofrece oportunidades.</li>
+          <li><strong>Es tu campo de misión:</strong> Allí puedes compartir el amor de Dios de forma natural.</li>
+        </ul>
+      </section>
+
+      <section class="bloque">
+        <h3>Reflexión</h3>
+        <p>¿Quiénes forman parte de tu mundo personal? ¿Cómo puedes ser testimonio para ellos esta semana?</p>
+        <textarea rows="4" placeholder="Escribe tu reflexión aquí..."></textarea>
+      </section>
+
+      <section class="bloque">
+        <h3>Práctica</h3>
+        <p><strong>Haz una lista de cinco personas de tu mundo personal por quienes orarás y a quienes buscarás impactar:</strong></p>
+        <ul>
+          <li><input type="text" placeholder="Persona 1" /></li>
+          <li><input type="text" placeholder="Persona 2" /></li>
+          <li><input type="text" placeholder="Persona 3" /></li>
+          <li><input type="text" placeholder="Persona 4" /></li>
+          <li><input type="text" placeholder="Persona 5" /></li>
+        </ul>
+      </section>
+
+      <section class="bloque">
+        <h3>Mañana</h3>
+        <p>En el Día 2 aprenderás sobre el <strong>crecimiento espiritual y la evangelización</strong> como parte de tu llamado personal.</p>
+        <a href="leccion6-dia2.html" class="boton-siguiente">→ Ir al Día 2</a>
+      </section>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      localStorage.setItem('leccion6-dia1', 'vista');
+    });
+  </script>
+</body>
+</html>

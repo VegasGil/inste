@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lección 6 – Día 5</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Discipulado INSTE</h1>
+    <p>Caminando con Cristo, día a día</p>
+    <a href="index.html" class="volver-menu">← Volver al menú</a>
+    <button class="toggle-mode" onclick="toggleMode()">🌙</button>
+  </header>
+
+  <main class="blog-leccion">
+    <article class="entrada">
+      <h2>Lección 6</h2>
+      <h1 class="titulo-dia">Día 5: Repaso de la lección</h1>
+
+      <section class="bloque">
+        <h3>Resumen de la lección</h3>
+        <ul>
+          <li><strong>Día 1:</strong> Identificaste tu mundo personal como campo de misión.</li>
+          <li><strong>Día 2:</strong> Conectaste el crecimiento espiritual con la evangelización.</li>
+          <li><strong>Día 3:</strong> Aprendiste a usar tu testimonio personal para compartir tu fe.</li>
+          <li><strong>Día 4:</strong> Practicaste cómo explicar el plan de salvación de forma clara y bíblica.</li>
+        </ul>
+      </section>
+
+      <section class="bloque">
+        <h3>Autoevaluación</h3>
+        <p><strong>Marca los temas que comprendiste con claridad:</strong></p>
+        <ul>
+          <li><input type="checkbox" /> Mi mundo personal</li>
+          <li><input type="checkbox" /> Crecimiento espiritual y evangelización</li>
+          <li><input type="checkbox" /> Testimonio personal</li>
+          <li><input type="checkbox" /> Plan de salvación</li>
+        </ul>
+      </section>
+
+      <section class="bloque">
+        <h3>Reflexión final</h3>
+        <p>¿Qué enseñanza de esta lección impactó más tu vida? ¿Cómo la aplicarás en tu entorno?</p>
+        <textarea rows="4" placeholder="Escribe tu reflexión aquí..."></textarea>
+      </section>
+
+      <section class="bloque">
+        <h3>Acceso al examen</h3>
+        <p>Ahora que has repasado los contenidos, estás listo para presentar el <strong>examen de la lección 6</strong>.</p>
+        <a href="examen6.html" class="boton-examen">📝 Ir al examen</a>
+      </section>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      localStorage.setItem('leccion6-dia5', 'vista');
+    });
+  </script>
+</body>
+</html>
