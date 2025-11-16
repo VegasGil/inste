@@ -61,14 +61,16 @@
     "Día 2: El concepto de sí mismo",
     "Día 3: La comunión como medio de crecimiento",
     "Día 4: Conociéndonos los unos a los otros",
-    "Día 5: La vida cristiana es relacional"
+    "Día 5: La vida cristiana es relacional",
+    "Día 6: exámen_8"
   ],
   leccion9: [
     "Día 1: Los principios 1 y 2",
     "Día 2: Los principios 3 al 7",
     "Día 3: Los principios 8 al 10",
     "Día 4: Los principios 11 y 12",
-    "Día 5: Repaso"
+    "Día 5: Repaso",
+    "Día 6: exámen_9"
   ],
   leccion10: [
     "Día 1: Cómo resolver un conflicto",

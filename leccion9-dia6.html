@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Examen 9 – Unos a Otros</title>
+  <link rel="stylesheet" href="examen.css" />
+</head>
+
+<body>
+  <div class="examen-container">
+    <div class="exame">
+      <div class="encabezado">
+        <img src="image.png" alt="INSTE" class="logo" />
+        <h1>El Discipulado 1</h1>
+      </div>
+      <h2>Exámen 9: “Unos a Otros”</h2>
+      <h3 id="nombre-impreso"></h3>
+      <p><em>Completa las respuestas según lo aprendido esta semana.</em></p>
+    </div>
+
+    <form id="form-examen">
+      <!-- Principios “unos a otros” -->
+      <article>
+        <label>1–12. Escribe los doce principios “unos a otros” que estudiamos esta semana:</label>
+
+        <div class="principios-grid">
+          <label>1.</label><input type="text" name="principio1" placeholder="" />
+          <label>2.</label><input type="text" name="principio2" placeholder="" />
+          <label>3.</label><input type="text" name="principio3" placeholder="" />
+          <label>4.</label><input type="text" name="principio4" />
+          <label>5.</label><input type="text" name="principio5" />
+          <label>6.</label><input type="text" name="principio6" />
+          <label>7.</label><input type="text" name="principio7" />
+          <label>8.</label><input type="text" name="principio8" />
+          <label>9.</label><input type="text" name="principio9" />
+          <label>10.</label><input type="text" name="principio10" />
+          <label>11.</label><input type="text" name="principio11" />
+          <label>12.</label><input type="text" name="principio12" />
+        </div>
+      </article>
+      <!-- Versículo de memoria -->
+      <article>
+        <label>8–12. Escribe de memoria el versículo de esta semana (Hebreos 10:24–25):</label>
+        <textarea name="versiculo" rows="4" placeholder="Escribe el versículo completo..."></textarea>
+      </article>
+
+      <!-- Comparación de evaluación -->
+      <article>
+        <label>13. Compara tu evaluación del grupo de INSTE en el día 5 con la de tu compañero de crecimiento
+          espiritual. ¿Qué diferencias hay?</label>
+        <textarea name="evaluacion" rows="4" placeholder="Describe las diferencias encontradas..."></textarea>
+      </article>
+
+      <!-- Confirmaciones -->
+      <article>
+        <label>14. ¿Estudiaste todos los días?</label>
+        <input type="checkbox" name="extra1" />
+      </article>
+
+      <article>
+        <label>15. ¿Terminaste la lección?</label>
+        <input type="checkbox" name="extra2" />
+      </article>
+
+      <button type="button" onclick="calcularExamen()">Calcular y Imprimir</button>
+      <div id="resultado"></div>
+    </form>
+
+    <!-- Modal de instrucciones -->
+    <div id="modal-instrucciones" class="modal">
+      <div class="modal-content">
+        <h2>Instrucciones del examen</h2>
+        <p>Completa cada pregunta con sinceridad.<br>Ingresa tu nombre para continuar.</p>
+        <label for="nombre">Nombre del alumno:</label>
+        <input type="text" id="nombre" />
+        <button onclick="iniciarExamen()">Continuar</button>
+      </div>
+    </div>
+
+    <!-- Modal de bloqueo -->
+    <div id="modal-bloqueo" class="modal">
+      <div class="modal-content">
+        <h2>Examen ya presentado</h2>
+        <p id="mensaje-bloqueo"></p>
+        <label for="clave">Clave del facilitador para desbloquear:</label>
+        <input type="password" id="clave" />
+        <button onclick="desbloquearExamen()">Desbloquear</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="leccion9-dia6.js"></script>
+</body>
+
+</html>

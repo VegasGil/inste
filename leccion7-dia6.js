@@ -80,7 +80,7 @@ function calcularExamen() {
     puntaje: score,
     porcentaje: porcentaje
   };
-  localStorage.setItem('examen10-testigos', JSON.stringify(resultado));
+  localStorage.setItem('examen7-testigos', JSON.stringify(resultado));
 
   window.print();
 }
