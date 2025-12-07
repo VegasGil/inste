@@ -1,11 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Examen – Lección 12 Día 4: Cómo estudiar la Biblia</title>
+  <link rel="stylesheet" href="examen.css" />
 </head>
 <body>
-    <h1>Prueba</h1>
+  <div class="examen-container">
+    <!-- Encabezado -->
+    <div class="encabezado">
+      <img src="image.png" alt="INSTE" class="logo" />
+      <h1>El Discipulado 1</h1>
+      <h2>Examen – Lección 12: Cómo estudiar la Biblia</h2>
+      <h3 id="nombre-impreso"></h3>
+      <p><em>Evalúa tu estudio bíblico de esta semana siguiendo los criterios indicados.</em></p>
+    </div>
+
+    <!-- Formulario del examen -->
+    <form id="form-examen">
+      <!-- Lectura de Filipenses -->
+      <article>
+        <label for="lectura">1–15. ¿Cuántas veces leíste Filipenses esta semana?</label>
+        <select id="lectura" name="lectura">
+          <option value="">Selecciona…</option>
+          <option value="1-4">1–4 veces</option>
+          <option value="5-6">5–6 veces</option>
+          <option value="7-8">7–8 veces</option>
+        </select>
+      </article>
+
+      <!-- Estudio sintético -->
+      <article>
+        <h3>16–20. ¿Terminaste con el estudio sintético para entregar a tu líder de grupo?</h3>
+        <p>¿Incluye tu estudio los siguientes componentes?</p>
+        <ul>
+          <li><input type="checkbox" name="componentes" value="lecturas" /> Número de veces que has leído el libro</li>
+          <li><input type="checkbox" name="componentes" value="introduccion" /> Introducción</li>
+          <li><input type="checkbox" name="componentes" value="bosquejo" /> Bosquejo y resúmenes de los párrafos</li>
+          <li><input type="checkbox" name="componentes" value="aplicacion" /> Aplicación (tu reacción personal)</li>
+        </ul>
+      </article>
+
+      <!-- Versículo de memoria -->
+      <article>
+        <label for="versiculo">26–30. Escribe el versículo de esta semana (Colosenses 3:16):</label>
+        <textarea id="versiculo" name="versiculo" rows="4" placeholder="Escribe el versículo completo aquí..."></textarea>
+      </article>
+
+      <!-- Confirmaciones -->
+      <article>
+        <label for="estudie">31. ¿Estudiaste todos los días?</label>
+        <input id="estudie" type="checkbox" name="estudie" />
+      </article>
+
+      <article>
+        <label for="termine">32. ¿Terminaste con la lección?</label>
+        <input id="termine" type="checkbox" name="termine" />
+      </article>
+
+      <!-- Botón y resultado -->
+      <button type="button" onclick="calcularExamen()">Calcular y Imprimir</button>
+      <div id="resultado"></div>
+    </form>
+
+    <!-- Modal de instrucciones -->
+    <div id="modal-instrucciones" class="modal">
+      <div class="modal-content">
+        <h2>Instrucciones del examen</h2>
+        <p>Completa cada pregunta con sinceridad.<br>Ingresa tu nombre para continuar.</p>
+        <label for="nombre">Nombre del alumno:</label>
+        <input type="text" id="nombre" />
+        <button onclick="iniciarExamen()">Continuar</button>
+      </div>
+    </div>
+
+    <!-- Modal de bloqueo -->
+    <div id="modal-bloqueo" class="modal">
+      <div class="modal-content">
+        <h2>Examen ya presentado</h2>
+        <p id="mensaje-bloqueo"></p>
+        <form id="form-desbloqueo">
+          <label for="clave">Clave del facilitador para desbloquear:</label>
+          <input type="password" id="clave" />
+          <button type="button" onclick="desbloquearExamen()">Desbloquear</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="leccion12-examen.js"></script>
 </body>
 </html>

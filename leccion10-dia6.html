@@ -1,11 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Examen – Lección 9: La unidad del cuerpo</title>
+  <link rel="stylesheet" href="examen.css" />
 </head>
 <body>
-    <h1>Prueba</h1>
+  <div class="examen-container">
+    <div class="encabezado">
+      <img src="image.png" alt="INSTE" class="logo" />
+      <h1>El Discipulado 1</h1>
+      <h2>Examen – Lección 10: La unidad del cuerpo</h2>
+      <h3 id="nombre-impreso"></h3>
+      <p><em>Completa las respuestas según lo aprendido esta semana.</em></p>
+    </div>
+
+    <form id="form-examen">
+      <!-- Preguntas de opción múltiple -->
+      <article>
+        <label>1. Un conflicto es:</label>
+        <select name="pregunta1">
+          <option value="A">A. la ruptura de una relación.</option>
+          <option value="B">B. es un desacuerdo o una diferencia de opiniones sobre algún asunto.</option>
+          <option value="C">C. un problema no resuelto</option>
+          <option value="D">D. tiene que ser evitado a todo costo.</option>
+        </select>
+      </article>
+
+      <article>
+        <label>2. Un problema es:</label>
+        <select name="pregunta2">
+          <option value="A">A. un conflicto no resuelto.</option>
+          <option value="B">B. tiene que ser evitado a todo costo.</option>
+          <option value="C">C. siempre termina en el crecimiento de una relación.</option>
+          <option value="D">D. 	es una relación irreparable</option>
+        </select>
+      </article>
+
+      <article>
+        <label>3. La reconciliación:</label>
+        <select name="pregunta3">
+          <option value="A">A. se basa en el acercamiento mutuo.</option>
+          <option value="B">B. es todo divino; no podemos hacer nada para reconciliarnos con un hermano.</option>
+          <option value="C">C. es responsabilidad del otro; no tengo que hacer nada.</option>
+          <option value="D">D. es automática entre hermanos en la fe.</option>
+        </select>
+      </article>
+
+      <!-- Emparejar niveles de comunicación -->
+      <article>
+        <h2>Empareja las frases con los niveles de comunicación:</h2>
+        <h3>A.	Comunicación de emociones</h3>
+        <h3>B.	Comunicación de ideas</h3>
+        <h3>C.	Comunicación de tercera persona</h3>
+        <h3>D.	Comunicación prefabricada</h3>
+        <h3>E.	Comunicación total</h3>
+        <p>4. Donde queremos llegar en el grupo de INSTE.</p>
+        <input type="text" name="pregunta4" placeholder="Escribe la letra (A–E)" />
+
+        <p>5. Impersonal. No resulta en el crecimiento de la relación.</p>
+        <input type="text" name="pregunta5" placeholder="Escribe la letra (A–E)" />
+
+        <p>6. Lo ideal para el matrimonio.</p>
+        <input type="text" name="pregunta6" placeholder="Escribe la letra (A–E)" />
+
+        <p>7. Nivel de comunicación de muchos estudios bíblicos.</p>
+        <input type="text" name="pregunta7" placeholder="Escribe la letra (A–E)" />
+
+        <p>8. El nivel más superficial.</p>
+        <input type="text" name="pregunta8" placeholder="Escribe la letra (A–E)" />
+
+        <p>9. Comunicación entre tú y tu compañero de crecimiento espiritual.</p>
+        <input type="text" name="pregunta9" placeholder="Escribe la letra (A–E)" />
+      </article>
+
+      <!-- Versículo de memoria -->
+      <article>
+        <label>10–12. Escribe de memoria el versículo de esta semana:</label>
+        <textarea name="versiculo" rows="4" placeholder="Escribe el versículo completo..."></textarea>
+      </article>
+
+      <!-- Confirmaciones -->
+      <article>
+        <label>13. ¿Estudiaste todos los días?</label>
+        <input type="checkbox" name="estudie" />
+      </article>
+
+      <article>
+        <label>14. ¿Terminaste la lección?</label>
+        <input type="checkbox" name="termine" />
+      </article>
+
+      <button type="button" onclick="calcularExamen()">Calcular y Imprimir</button>
+      <div id="resultado"></div>
+    </form>
+
+    <!-- Modal de instrucciones -->
+    <div id="modal-instrucciones" class="modal">
+      <div class="modal-content">
+        <h2>Instrucciones del examen</h2>
+        <p>Completa cada pregunta con sinceridad.<br>Ingresa tu nombre para continuar.</p>
+        <label for="nombre">Nombre del alumno:</label>
+        <input type="text" id="nombre" />
+        <button onclick="iniciarExamen()">Continuar</button>
+      </div>
+    </div>
+
+    <!-- Modal de bloqueo -->
+    <form id="modal-bloqueo" class="modal">
+      <div class="modal-content">
+        <h2>Examen ya presentado</h2>
+        <p id="mensaje-bloqueo"></p>
+        <label for="clave">Clave del facilitador para desbloquear:</label>
+        <input type="password" id="clave" />
+        <button onclick="desbloquearExamen()">Desbloquear</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="leccion10-examen.js"></script>
 </body>
 </html>

@@ -1,11 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Examen – Lección 11: Cómo estudiar la Biblia</title>
+  <link rel="stylesheet" href="examen.css" />
 </head>
 <body>
-    <h1>Prueba</h1>
+  <div class="examen-container">
+    <!-- Encabezado -->
+    <div class="encabezado">
+      <img src="image.png" alt="INSTE" class="logo" />
+      <h1>El Discipulado 1</h1>
+      <h2>Examen – Lección 11: Cómo estudiar la Biblia</h2>
+      <h3 id="nombre-impreso"></h3>
+      <p><em>Escribe la letra correcta o tu respuesta según lo aprendido esta semana.</em></p>
+    </div>
+
+    <!-- Formulario del examen -->
+    <form id="form-examen">
+      <!-- Opción múltiple 1–8 -->
+      <article>
+        <label for="pregunta1">1. Las tres herramientas de lectura bíblica son:</label>
+        <select id="pregunta1" name="pregunta1">
+          <option value="">Selecciona…</option>
+          <option value="A">A. un lápiz, los ojos y la Biblia</option>
+          <option value="B">B. un lápiz, los ojos y el diario espiritual</option>
+          <option value="C">C. la Biblia, los ojos y el diario espiritual</option>
+          <option value="D">D. una concordancia, un diccionario bíblico y un comentario</option>
+        </select>
+      </article>
+
+      <article>
+        <label for="pregunta2">2. La hoja de apuntes que viene en esta lección sirve para:</label>
+        <select id="pregunta2" name="pregunta2">
+          <option value="">Selecciona…</option>
+          <option value="A">A. Incordiar a los alumnos.</option>
+          <option value="B">B. Evaluar críticamente los sermones y enseñanzas de tu pastor.</option>
+          <option value="C">C. Conservar en forma escrita los conceptos y principios bíblicos aprendidos a través de los sermones y enseñanzas de tu iglesia.</option>
+          <option value="D">D. Escribir notitas a tu vecino durante el mensaje.</option>
+        </select>
+      </article>
+
+      <article>
+        <label for="pregunta3">3. Después de tomar los apuntes, ¿qué hacer con la hoja?</label>
+        <select id="pregunta3" name="pregunta3">
+          <option value="">Selecciona…</option>
+          <option value="A">A. Guardarla para poder repasarla durante la semana.</option>
+          <option value="B">B. Tirarla, pues lo que vale es el acto de tomar apuntes.</option>
+          <option value="C">C. Darla al pastor o maestro junto con tu evaluación de su sermón o enseñanza.</option>
+          <option value="D">D. Entregarla al líder de tu grupo de INSTE todas las semanas.</option>
+        </select>
+      </article>
+
+      <article>
+        <label for="pregunta4">4. Las tres herramientas del estudio bíblico son:</label>
+        <select id="pregunta4" name="pregunta4">
+          <option value="">Selecciona…</option>
+          <option value="A">A. un lápiz, los ojos y la Biblia</option>
+          <option value="B">B. un lápiz, los ojos y el diario espiritual</option>
+          <option value="C">C. un lápiz, la Biblia y el diario espiritual</option>
+          <option value="D">D. una concordancia, un diccionario bíblico y un comentario</option>
+        </select>
+      </article>
+
+      <article>
+        <label for="pregunta5">5. Uno de los usos primordiales de la concordancia es:</label>
+        <select id="pregunta5" name="pregunta5">
+          <option value="">Selecciona…</option>
+          <option value="A">A. interpretar la palabra o frase bajo investigación.</option>
+          <option value="B">B. dar información sobre un libro, una costumbre, un personaje o lugar que se halla en la Biblia.</option>
+          <option value="C">C. ayudar al estudiante a localizar el pasaje deseado.</option>
+          <option value="D">D. dar la definición de la palabra en el idioma original.</option>
+        </select>
+      </article>
+
+      <article>
+        <label for="pregunta6">6. El diccionario bíblico:</label>
+        <select id="pregunta6" name="pregunta6">
+          <option value="">Selecciona…</option>
+          <option value="A">A. define todas las palabras encontradas en la Biblia.</option>
+          <option value="B">B. proporciona información que arroja luz sobre el trasfondo de un libro o de un pasaje o un personaje bíblico.</option>
+          <option value="C">C. no sirve para nada.</option>
+          <option value="D">D. interpreta frase por frase el texto bíblico.</option>
+        </select>
+      </article>
+
+      <article>
+        <label for="pregunta7">7. Un comentario:</label>
+        <select id="pregunta7" name="pregunta7">
+          <option value="">Selecciona…</option>
+          <option value="A">A. interpreta frase por frase el texto bíblico.</option>
+          <option value="B">B. sirve para hallar rápidamente en la Biblia un texto bíblico determinado.</option>
+          <option value="C">C. define todas las palabras encontradas en la Biblia.</option>
+          <option value="D">D. contiene las opiniones de los eruditos bíblicos, por lo tanto no se puede confiar en la interpretación dada.</option>
+        </select>
+      </article>
+
+      <article>
+        <label for="pregunta8">8. La literatura cristiana</label>
+        <select id="pregunta8" name="pregunta8">
+          <option value="">Selecciona…</option>
+          <option value="A">A. es una buena fuente de conocimiento bíblico si se utiliza sabiamente.</option>
+          <option value="B">B. no debe reemplazar la lectura diaria de la Biblia.</option>
+          <option value="C">C. tiene que ser evaluada por su utilidad; algunos libros son para probar, otros para tragar, y otros para masticar y digerir.</option>
+          <option value="D">D. (todas son correctas.)</option>
+        </select>
+      </article>
+
+      <!-- Respuestas abiertas 9–10 -->
+      <article>
+        <label for="respuesta-sermon">9–10. Escribe al menos un concepto o principio que aprendiste a través de un sermón o enseñanza bíblica de esta semana:</label>
+        <textarea id="respuesta-sermon" name="respuesta_sermon" rows="4" placeholder="Escribe tu(s) concepto(s) o principio(s) aquí..."></textarea>
+        <p class="nota"><em>(Enseña tu hoja de apuntes a tu líder de grupo.)</em></p>
+      </article>
+
+      <!-- Versículo de memoria 11–15 -->
+      <article>
+        <label for="versiculo">11–15. Escribe el versículo de memoria (Filipenses 4:13):</label>
+        <textarea id="versiculo" name="versiculo" rows="4" placeholder='“Todo lo puedo en Cristo que me fortalece.”'></textarea>
+      </article>
+
+      <!-- Confirmaciones 16–17 -->
+      <article>
+        <label for="estudie">16. ¿Estudiaste todos los días?</label>
+        <input id="estudie" type="checkbox" name="estudie" />
+      </article>
+
+      <article>
+        <label for="termine">17. ¿Terminaste la lección?</label>
+        <input id="termine" type="checkbox" name="termine" />
+      </article>
+
+      <!-- Botón y resultado -->
+      <button type="button" onclick="calcularExamen()">Calcular y Imprimir</button>
+      <div id="resultado"></div>
+    </form>
+
+    <!-- Modal de instrucciones -->
+    <div id="modal-instrucciones" class="modal">
+      <div class="modal-content">
+        <h2>Instrucciones del examen</h2>
+        <p>Completa cada pregunta con sinceridad.<br>Ingresa tu nombre para continuar.</p>
+        <label for="nombre">Nombre del alumno:</label>
+        <input type="text" id="nombre" />
+        <button onclick="iniciarExamen()">Continuar</button>
+      </div>
+    </div>
+
+    <!-- Modal de bloqueo -->
+    <div id="modal-bloqueo" class="modal">
+      <div class="modal-content">
+        <h2>Examen ya presentado</h2>
+        <p id="mensaje-bloqueo"></p>
+        <form id="form-desbloqueo">
+          <label for="clave">Clave del facilitador para desbloquear:</label>
+          <input type="password" id="clave" />
+          <button type="button" onclick="desbloquearExamen()">Desbloquear</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="leccion11-examen.js"></script>
 </body>
 </html>
