@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lección 11 – Día 1</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Discipulado INSTE</h1>
+    <p>Caminando con Cristo, día a día</p>
+    <a href="index.html" class="volver-menu">← Volver al menú</a>
+    <button class="toggle-mode" onclick="toggleMode()">🌙</button>
+  </header>
+
+  <main class="blog-leccion">
+    <article class="entrada">
+      <h2>Lección 11: El estudio bíblico</h2>
+      <h1 class="titulo-dia">Día 1: Cómo leer la Biblia</h1>
+
+      <section class="bloque">
+        <h3>Introducción</h3>
+        <p>La Biblia es la Palabra de Dios. No se lee como cualquier otro libro, sino con reverencia, oración y disposición a obedecer lo que Dios nos enseña.</p>
+      </section>
+
+      <section class="bloque">
+        <h3>Texto clave</h3>
+        <blockquote>“Abre mis ojos, y miraré las maravillas de tu ley.” (Salmo 119:18)</blockquote>
+      </section>
+
+      <section class="bloque">
+        <h3>Principios para leer la Biblia</h3>
+        <ul>
+          <li><strong>Leer con oración:</strong> Pide al Espíritu Santo que ilumine tu entendimiento.</li>
+          <li><strong>Leer con obediencia:</strong> La Palabra transforma cuando la ponemos en práctica.</li>
+          <li><strong>Leer con constancia:</strong> Haz de la lectura bíblica un hábito diario.</li>
+        </ul>
+      </section>
+
+      <section class="bloque">
+        <h3>Reflexión</h3>
+        <p>¿Cómo ha sido tu hábito de lectura bíblica hasta ahora? ¿Qué cambios necesitas hacer para que sea más constante y transformadora?</p>
+        <textarea rows="4" placeholder="Escribe tu reflexión aquí..."></textarea>
+      </section>
+
+      <section class="bloque">
+        <h3>Práctica</h3>
+        <p><strong>Acción para hoy:</strong> Escoge un pasaje bíblico y léelo con oración, pidiendo a Dios que te hable.</p>
+        <textarea rows="3" placeholder="Ejemplo: Juan 15, Efesios 4, Salmo 23..."></textarea>
+      </section>
+
+      <section class="bloque">
+        <h3>Mañana</h3>
+        <p>En el Día 2 aprenderás cómo escuchar un sermón y aplicar sus enseñanzas a tu vida.</p>
+        <a href="leccion11-dia2.html" class="boton-siguiente">→ Ir al Día 2</a>
+      </section>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      localStorage.setItem('leccion11-dia1', 'vista');
+    });
+  </script>
+</body>
+</html>

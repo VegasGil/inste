@@ -77,21 +77,24 @@
     "Día 2: La verdadera reconciliación",
     "Día 3: La comunicación en la comunidad del Rey",
     "Día 4: Estudio temático: La lengua",
-    "Día 5: Repaso"
+    "Día 5: Repaso",
+    "Día 6: exámen_10"
   ],
   leccion11: [
     "Día 1: Cómo leer la Biblia",
     "Día 2: Cómo escuchar un sermón",
     "Día 3: Cómo usar las herramientas de estudio bíblico",
     "Día 4: Cómo usar la literatura cristiana en el estudio bíblico",
-    "Día 5: Resumen"
+    "Día 5: Resumen",
+    "Día 6: exámen_11"
   ],
   leccion12: [
     "Día 1: El método sintético",
     "Día 2: La introducción al libro",
     "Día 3: Los párrafos y el bosquejo",
     "Día 4: El resumen del mensaje del libro",
-    "Día 5: Resumen y repaso"
+    "Día 5: Resumen y repaso",
+    "Día 6: exámen_12"
   ],
   leccion13: [
     "Día 1: El método temático",

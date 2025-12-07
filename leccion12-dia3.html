@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lección 12 – Día 3</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Discipulado INSTE</h1>
+    <p>Caminando con Cristo, día a día</p>
+    <a href="index.html" class="volver-menu">← Volver al menú</a>
+    <button class="toggle-mode" onclick="toggleMode()">🌙</button>
+  </header>
+
+  <main class="blog-leccion">
+    <article class="entrada">
+      <h2>Lección 12: El método sintético</h2>
+      <h1 class="titulo-dia">Día 3: Los párrafos y el bosquejo</h1>
+
+      <section class="bloque">
+        <h3>Introducción</h3>
+        <p>Un libro bíblico está compuesto de párrafos que desarrollan ideas principales. Identificarlos y organizarlos en un bosquejo nos ayuda a captar la estructura del mensaje y la progresión del pensamiento.</p>
+      </section>
+
+      <section class="bloque">
+        <h3>Texto clave</h3>
+        <blockquote>“Haz todo decentemente y con orden.” (1 Corintios 14:40)</blockquote>
+      </section>
+
+      <section class="bloque">
+        <h3>Pasos para elaborar un bosquejo</h3>
+        <ul>
+          <li><strong>División en párrafos:</strong> Leer el libro y dividirlo en secciones naturales.</li>
+          <li><strong>Idea principal:</strong> Identificar el tema central de cada párrafo.</li>
+          <li><strong>Organización:</strong> Ordenar los párrafos en un esquema que muestre la progresión del pensamiento.</li>
+        </ul>
+      </section>
+
+      <section class="bloque">
+        <h3>Reflexión</h3>
+        <p>¿Qué libro bíblico podrías bosquejar? ¿Cómo te ayudaría a comprender mejor su mensaje?</p>
+        <textarea rows="4" placeholder="Escribe tu reflexión aquí..."></textarea>
+      </section>
+
+      <section class="bloque">
+        <h3>Práctica</h3>
+        <p><strong>Acción para hoy:</strong> Escoge un capítulo de la Biblia y divídelo en párrafos, escribiendo la idea principal de cada uno.</p>
+        <textarea rows="3" placeholder="Ejemplo: Juan 15 – Párrafo 1: La vid verdadera; Párrafo 2: Permanecer en Cristo..."></textarea>
+      </section>
+
+      <section class="bloque">
+        <h3>Mañana</h3>
+        <p>En el Día 4 aprenderás cómo elaborar un resumen del mensaje del libro.</p>
+        <a href="leccion12-dia4.html" class="boton-siguiente">→ Ir al Día 4</a>
+      </section>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      localStorage.setItem('leccion12-dia3', 'vista');
+    });
+  </script>
+</body>
+</html>

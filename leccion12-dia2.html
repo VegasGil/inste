@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lección 12 – Día 2</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Discipulado INSTE</h1>
+    <p>Caminando con Cristo, día a día</p>
+    <a href="index.html" class="volver-menu">← Volver al menú</a>
+    <button class="toggle-mode" onclick="toggleMode()">🌙</button>
+  </header>
+
+  <main class="blog-leccion">
+    <article class="entrada">
+      <h2>Lección 12: El método sintético</h2>
+      <h1 class="titulo-dia">Día 2: La introducción al libro</h1>
+
+      <section class="bloque">
+        <h3>Introducción</h3>
+        <p>Antes de estudiar un libro bíblico en detalle, es importante conocer su contexto: autor, fecha, destinatarios y propósito. Esto nos ayuda a entender mejor el mensaje y su aplicación.</p>
+      </section>
+
+      <section class="bloque">
+        <h3>Texto clave</h3>
+        <blockquote>“Porque las cosas que se escribieron antes, para nuestra enseñanza se escribieron.” (Romanos 15:4)</blockquote>
+      </section>
+
+      <section class="bloque">
+        <h3>Aspectos de la introducción</h3>
+        <ul>
+          <li><strong>Autor:</strong> ¿Quién escribió el libro?</li>
+          <li><strong>Fecha y lugar:</strong> ¿Cuándo y dónde fue escrito?</li>
+          <li><strong>Destinatarios:</strong> ¿A quién iba dirigido originalmente?</li>
+          <li><strong>Propósito:</strong> ¿Por qué fue escrito?</li>
+          <li><strong>Tema principal:</strong> ¿Cuál es el mensaje central?</li>
+        </ul>
+      </section>
+
+      <section class="bloque">
+        <h3>Reflexión</h3>
+        <p>¿Qué libro de la Biblia te gustaría introducir y estudiar con este método? ¿Qué aspectos del contexto te parecen más importantes?</p>
+        <textarea rows="4" placeholder="Escribe tu reflexión aquí..."></textarea>
+      </section>
+
+      <section class="bloque">
+        <h3>Práctica</h3>
+        <p><strong>Acción para hoy:</strong> Escoge un libro bíblico y escribe una breve introducción con los datos que conozcas.</p>
+        <textarea rows="3" placeholder="Ejemplo: Autor: Pablo, Fecha: 60 d.C., Destinatarios: iglesia en Éfeso..."></textarea>
+      </section>
+
+      <section class="bloque">
+        <h3>Mañana</h3>
+        <p>En el Día 3 aprenderás cómo identificar los párrafos y elaborar un bosquejo del libro.</p>
+        <a href="leccion12-dia3.html" class="boton-siguiente">→ Ir al Día 3</a>
+      </section>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      localStorage.setItem('leccion12-dia2', 'vista');
+    });
+  </script>
+</body>
+</html>

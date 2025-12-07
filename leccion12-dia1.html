@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lección 12 – Día 1</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Discipulado INSTE</h1>
+    <p>Caminando con Cristo, día a día</p>
+    <a href="index.html" class="volver-menu">← Volver al menú</a>
+    <button class="toggle-mode" onclick="toggleMode()">🌙</button>
+  </header>
+
+  <main class="blog-leccion">
+    <article class="entrada">
+      <h2>Lección 12: El método sintético</h2>
+      <h1 class="titulo-dia">Día 1: El método sintético</h1>
+
+      <section class="bloque">
+        <h3>Introducción</h3>
+        <p>El método sintético consiste en estudiar un libro de la Biblia como un todo, buscando captar su mensaje general antes de analizar los detalles. Este enfoque nos ayuda a ver la unidad y el propósito del libro.</p>
+      </section>
+
+      <section class="bloque">
+        <h3>Texto clave</h3>
+        <blockquote>“Toda la Escritura es inspirada por Dios, y útil para enseñar, para redargüir, para corregir, para instruir en justicia.” (2 Timoteo 3:16)</blockquote>
+      </section>
+
+      <section class="bloque">
+        <h3>Pasos del método sintético</h3>
+        <ul>
+          <li><strong>Lectura completa:</strong> Leer el libro entero para captar la idea general.</li>
+          <li><strong>Identificación de temas:</strong> Reconocer los temas principales y repetitivos.</li>
+          <li><strong>Estructura general:</strong> Observar cómo se organiza el libro (introducción, desarrollo, conclusión).</li>
+        </ul>
+      </section>
+
+      <section class="bloque">
+        <h3>Reflexión</h3>
+        <p>¿Qué libro de la Biblia te gustaría estudiar con el método sintético? ¿Qué esperas descubrir al leerlo como un todo?</p>
+        <textarea rows="4" placeholder="Escribe tu reflexión aquí..."></textarea>
+      </section>
+
+      <section class="bloque">
+        <h3>Práctica</h3>
+        <p><strong>Acción para hoy:</strong> Escoge un libro corto de la Biblia (por ejemplo, Filipenses) y léelo completo en una sola sesión.</p>
+        <textarea rows="3" placeholder="Escribe tus observaciones generales..."></textarea>
+      </section>
+
+      <section class="bloque">
+        <h3>Mañana</h3>
+        <p>En el Día 2 aprenderás cómo hacer una introducción al libro, considerando su autor, contexto y propósito.</p>
+        <a href="leccion12-dia2.html" class="boton-siguiente">→ Ir al Día 2</a>
+      </section>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      localStorage.setItem('leccion12-dia1', 'vista');
+    });
+  </script>
+</body>
+</html>
