@@ -101,7 +101,8 @@
     "Día 2: El método temático",
     "Día 3: El método biográfico",
     "Día 4: El método biográfico",
-    "Día 5: Repaso de los métodos de estudio bíblico"
+    "Día 5: Repaso de los métodos de estudio bíblico",
+    "Día 6: exámen_13"
   ],
   leccion14: [
     "Día 1: Repaso de las lecciones 1 y 2: El señorío de Cristo",

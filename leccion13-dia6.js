@@ -1,12 +1,12 @@
 let alumno = "";
 
 window.onload = function () {
-  const resultadoGuardado = localStorage.getItem('examen12-dia4-como-estudiar-la-biblia');
+  const resultadoGuardado = localStorage.getItem('examen13-como-estudiar-la-biblia');
   if (resultadoGuardado) {
     const datos = JSON.parse(resultadoGuardado);
     document.getElementById('modal-bloqueo').style.display = 'flex';
     document.getElementById('mensaje-bloqueo').innerText =
-      `El alumno "${datos.nombre}" ya presentó el examen.\nPuntaje: ${datos.puntaje}/32 (${datos.porcentaje}%)`;
+      `El alumno "${datos.nombre}" ya presentó el examen.\nPuntaje: ${datos.puntaje}/27 (${datos.porcentaje}%)`;
   } else {
     document.getElementById('modal-instrucciones').style.display = 'flex';
   }
@@ -15,7 +15,7 @@ window.onload = function () {
 function desbloquearExamen() {
   const clave = document.getElementById('clave').value.trim();
   if (clave === "59") {
-    localStorage.removeItem('examen12-dia4-como-estudiar-la-biblia');
+    localStorage.removeItem('examen13-como-estudiar-la-biblia');
     location.reload();
   } else {
     alert("Clave incorrecta.");
@@ -36,33 +36,35 @@ function iniciarExamen() {
 function calcularExamen() {
   let score = 0;
 
-  // Pregunta 1–15: Lectura de Filipenses
-  const lectura = document.querySelector('select[name="lectura"]');
-  if (lectura) {
-    if (lectura.value === "1-4") score += 5;
-    if (lectura.value === "5-6") score += 10;
-    if (lectura.value === "7-8") score += 15;
+  // Pasos del estudio biográfico (5 pasos × 4 puntos)
+  const pasos = [
+    'paso1', 'paso2', 'paso3', 'paso4', 'paso5'
+  ];
+  pasos.forEach(p => {
+    const campo = document.querySelector(`input[name="${p}"]`);
+    if (campo && campo.checked) score += 4;
+  });
+
+  const biografico = document.querySelector('textarea[name="biografico"]');
+  if (biografico) {
+    const texto = biografico.value.toLowerCase();
+    if (texto.includes("timoteo nació")) score += 5;
   }
-
-  // Pregunta 16–20: Estudio sintético (4 componentes)
-  const componentes = document.querySelectorAll('input[name="componentes"]:checked');
-  score +=  componentes.length * 2; // cada componente = 1 punto
-
-  // Versículo de memoria (26–30)
+  // Versículo de memoria (Josué 1:8) – 5 puntos
   const versiculo = document.querySelector('textarea[name="versiculo"]');
   if (versiculo) {
     const texto = versiculo.value.toLowerCase();
-    if (texto.includes("colosenses 3:16")) score += 7;
+    if (texto.includes("josué 1:8")) score += 5;
   }
 
-  // Confirmaciones (31–32)
+
+  // Confirmaciones (26–27) – 2 puntos
   const estudie = document.querySelector('input[name="estudie"]');
   const termine = document.querySelector('input[name="termine"]');
   if (estudie && estudie.checked) score++;
   if (termine && termine.checked) score++;
 
-  // Total = 17
-  const total = 32;
+  // Total = 27;
   const porcentaje = ((score / total) * 100).toFixed(2);
 
   document.getElementById("resultado").innerHTML =
@@ -73,7 +75,7 @@ function calcularExamen() {
     puntaje: score,
     porcentaje: porcentaje
   };
-  localStorage.setItem('examen12-dia4-como-estudiar-la-biblia', JSON.stringify(resultado));
+  localStorage.setItem('examen13-como-estudiar-la-biblia', JSON.stringify(resultado));
 
   window.print();
 }

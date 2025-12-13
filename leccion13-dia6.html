@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Examen – Lección 13: Cómo estudiar la Biblia</title>
+  <link rel="stylesheet" href="examen.css" />
+</head>
+<body>
+  <div class="examen-container">
+    <!-- Encabezado -->
+    <div class="encabezado">
+      <img src="image.png" alt="INSTE" class="logo" />
+      <h1>El Discipulado 1</h1>
+      <h2>Examen 13: Cómo estudiar la Biblia</h2>
+      <h2>Métodos temático y biográfico</h2>
+      <h3 id="nombre-impreso"></h3>
+      <p><em style="color: red;">Cada miembro del grupo evaluará el estudio biográfico con su compañero de crecimiento espiritual siguiendo las pautas de este examen y por compararlo con el estudio bíblico en esta lección</em></p>
+    </div>
+
+    <!-- Formulario del examen -->
+    <form id="form-examen">
+      <!-- Evaluación del estudio biográfico -->
+      <article>
+        <h3>Compara tu estudio biográfico con el modelo a continuación. ¿Has seguido los pasos que presentamos en la lección? Cada paso vale cuatro puntos.</h3>
+        <ul>
+          <li><input type="checkbox" name="paso1" /> Escoger un personaje y anotar las referencias bíblicas (4 puntos)</li>
+          <li><input type="checkbox" name="paso2" /> Hacer una “entrevista” con el carácter bíblico (4 puntos)</li>
+          <li><input type="checkbox" name="paso3" /> Escoger un versículo clave (4 puntos)</li>
+          <li><input type="checkbox" name="paso4" /> Resumir la lección destacada del estudio (4 puntos)</li>
+          <li><input type="checkbox" name="paso5" /> Hacer la aplicación personal (4 puntos)</li>
+        </ul>
+      </article>
+<article class="bloque">
+  <h3>Estudio Biográfico: Timoteo</h3>
+  <p><strong>Personaje:</strong> Timoteo</p>
+
+  <table class="tabla-biografica">
+    <thead>
+      <tr>
+        <th>Referencia</th>
+        <th>Materia biográfica</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hch. 16:1-3</td>
+        <td>Nativo de Listra, hijo de madre judía creyente y de padre griego. Los hermanos daban buen testimonio de él. Pablo le circuncidó y le hizo parte de su equipo misionero.</td>
+      </tr>
+      <tr>
+        <td>Hch. 17:14-15</td>
+        <td>Viaja con Pablo y Silas a las iglesias fundadas en el primer viaje. Después de la visión del varón macedonio, los misioneros van a Filipos y Tesalónica, donde Pablo deja a Silas y Timoteo para cuidar a la iglesia.</td>
+      </tr>
+      <tr>
+        <td>Hch. 18:5</td>
+        <td>Se juntan otra vez con Pablo en Corinto.</td>
+      </tr>
+      <tr>
+        <td>Hch. 19:22</td>
+        <td>Es enviado con Erasto por Pablo de Éfeso a Macedonia.</td>
+      </tr>
+      <tr>
+        <td>Hch. 20:4</td>
+        <td>Con seis compañeros del equipo, Timoteo va a Troas para esperar a Pablo. De ahí se van a Mileto, cerca de Éfeso.</td>
+      </tr>
+      <tr>
+        <td>Rom. 16:21</td>
+        <td>Timoteo envía saludos a los creyentes de Roma.</td>
+      </tr>
+    </tbody>
+  </table>
+  <label for="biografico">Resumen biográfico del Material biografico</label>
+   <textarea id="biografico" name="biografico" rows="4" placeholder="Escribe el versículo completo aquí..."></textarea>
+</article>
+      <!-- Versículo de memoria -->
+      <article>
+        <label for="versiculo">21–25. Escribe de memoria el versículo de esta semana:</label>
+        <textarea id="versiculo" name="versiculo" rows="4" placeholder="Escribe el versículo completo aquí..."></textarea>
+      </article>
+
+      <!-- Confirmaciones -->
+      <article>
+        <label for="estudie">26. ¿Estudiaste todos los días?</label>
+        <input id="estudie" type="checkbox" name="estudie" />
+      </article>
+
+      <article>
+        <label for="termine">27. ¿Terminaste con la lección?</label>
+        <input id="termine" type="checkbox" name="termine" />
+      </article>
+
+      <!-- Botón y resultado -->
+      <button type="button" onclick="calcularExamen()">Calcular y Imprimir</button>
+      <div id="resultado"></div>
+    </form>
+
+    <!-- Modal de instrucciones -->
+    <div id="modal-instrucciones" class="modal">
+      <div class="modal-content">
+        <h2>Instrucciones del examen</h2>
+        <p>Completa cada pregunta con sinceridad.<br>Ingresa tu nombre para continuar.</p>
+        <label for="nombre">Nombre del alumno:</label>
+        <input type="text" id="nombre" />
+        <button onclick="iniciarExamen()">Continuar</button>
+      </div>
+    </div>
+
+    <!-- Modal de bloqueo -->
+    <div id="modal-bloqueo" class="modal">
+      <div class="modal-content">
+        <h2>Examen ya presentado</h2>
+        <p id="mensaje-bloqueo"></p>
+        <form id="form-desbloqueo">
+          <label for="clave">Clave del facilitador para desbloquear:</label>
+          <input type="password" id="clave" />
+          <button type="button" onclick="desbloquearExamen()">Desbloquear</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="leccion13-dia6.js"></script>
+</body>
+</html>
