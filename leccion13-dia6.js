@@ -40,21 +40,21 @@ function calcularExamen() {
   const pasos = ['paso1', 'paso2', 'paso3', 'paso4', 'paso5'];
   pasos.forEach(p => {
     const campo = document.querySelector(`input[name="${p}"]`);
-    if (campo && campo.checked) score += 4;
+    if (campo && campo.checked) score += 2;
   });
 
   // Evaluación del resumen biográfico (5 puntos)
   const biografico = document.querySelector('textarea[name="biografico"]');
   if (biografico) {
     const texto = biografico.value.toLowerCase();
-    if (texto.includes("timoteo")) score += 5;
+    if (texto.includes("timoteo")) score += 3;
   }
 
   // Versículo de memoria (Josué 1:8) – 5 puntos
   const versiculo = document.querySelector('textarea[name="versiculo"]');
   if (versiculo) {
     const texto = versiculo.value.toLowerCase();
-    if (texto.includes("nunca se apartará de tu boca este libro de la ley")) score += 5;
+    if (texto.includes("nunca se apartará de tu boca este libro de la ley")) score += 2;
   }
 
   // Confirmaciones (26–27) – 2 puntos
@@ -64,7 +64,7 @@ function calcularExamen() {
   if (termine && termine.checked) score++;
 
   // DEFINIR TOTAL (esto faltaba)
-  const total = 27;
+  const total = 17;
 
   const porcentaje = ((score / total) * 100).toFixed(2);
 
