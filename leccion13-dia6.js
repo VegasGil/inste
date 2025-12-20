@@ -37,26 +37,25 @@ function calcularExamen() {
   let score = 0;
 
   // Pasos del estudio biográfico (5 pasos × 4 puntos)
-  const pasos = [
-    'paso1', 'paso2', 'paso3', 'paso4', 'paso5'
-  ];
+  const pasos = ['paso1', 'paso2', 'paso3', 'paso4', 'paso5'];
   pasos.forEach(p => {
     const campo = document.querySelector(`input[name="${p}"]`);
     if (campo && campo.checked) score += 4;
   });
 
+  // Evaluación del resumen biográfico (5 puntos)
   const biografico = document.querySelector('textarea[name="biografico"]');
   if (biografico) {
     const texto = biografico.value.toLowerCase();
-    if (texto.includes("timoteo nació")) score += 5;
+    if (texto.includes("timoteo")) score += 5;
   }
+
   // Versículo de memoria (Josué 1:8) – 5 puntos
   const versiculo = document.querySelector('textarea[name="versiculo"]');
   if (versiculo) {
     const texto = versiculo.value.toLowerCase();
-    if (texto.includes("josué 1:8")) score += 5;
+    if (texto.includes("nunca se apartará de tu boca este libro de la ley")) score += 5;
   }
-
 
   // Confirmaciones (26–27) – 2 puntos
   const estudie = document.querySelector('input[name="estudie"]');
@@ -64,7 +63,9 @@ function calcularExamen() {
   if (estudie && estudie.checked) score++;
   if (termine && termine.checked) score++;
 
-  // Total = 27;
+  // DEFINIR TOTAL (esto faltaba)
+  const total = 27;
+
   const porcentaje = ((score / total) * 100).toFixed(2);
 
   document.getElementById("resultado").innerHTML =
@@ -75,6 +76,7 @@ function calcularExamen() {
     puntaje: score,
     porcentaje: porcentaje
   };
+
   localStorage.setItem('examen13-como-estudiar-la-biblia', JSON.stringify(resultado));
 
   window.print();
