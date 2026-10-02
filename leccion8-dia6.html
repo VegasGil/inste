@@ -4,10 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Examen 8 – ¿Quién soy yo en Cristo?</title>
+  <!-- Librería html2pdf -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <link rel="stylesheet" href="examen.css" />
 </head>
 <body>
-  <div class="examen-container">
+  <div class="examen-container" id="contenido-examen">
     <div class="exame">
       <div class="encabezado">
         <img src="image.png" alt="INSTE" class="logo" />
@@ -45,13 +47,13 @@
         <select name="p6">
           <option value="">Selecciona</option>
           <option value="A">A. Percepciones, ideas e imágenes que uno tiene de sí mismo</option>
-          <option value="B">B. Experiencias que ha tenido  durante su vida.</option>
+          <option value="B">B. Experiencias que ha tenido durante su vida.</option>
           <option value="C">C. Intelecto, aspecto físico y temperamento de la persona.</option>
           <option value="D">D. Lo que se revela uno mismo al otro.</option>
         </select>
       </article>
 
-      <article><label>7. ¿¿Cuál de los siguientes no es uno de los componentes del concepto de sí mismo?</label>
+      <article><label>7. ¿Cuál de los siguientes no es uno de los componentes del concepto de sí mismo?</label>
         <select name="p7">
           <option value="">Selecciona</option>
           <option value="A">A. Creencias</option>
@@ -162,7 +164,7 @@
       </article>
 
       <!-- Ejercicio del día 2 -->
-      <article><label>21.Vuelve al pequeño ejercicio en el día 2. Describe a tu compañero de crecimiento espiritual escogiendo de la lista los cinco términos que más le caracterizan. Cuando termines, compara tu lista con el/ella:</label>
+      <article><label>21. Vuelve al pequeño ejercicio en el día 2. Describe a tu compañero de crecimiento espiritual escogiendo de la lista los cinco términos que más le caracterizan. Cuando termines, compara tu lista con el/ella:</label>
         <textarea name="compañero" rows="3" placeholder=""></textarea>
       </article>
 
@@ -175,8 +177,12 @@
         <input type="checkbox" name="extra2" />
       </article>
 
-      <button type="button" onclick="calcularExamen()">Calcular y Imprimir</button>
+      <!-- Botón que SOLO calcula el examen de forma segura -->
+      <button type="button" onclick="calcularExamen()">Calcular Examen</button>
       <div id="resultado"></div>
+      
+      <!-- Contenedor seguro para el botón de descarga manual -->
+      <div id="acciones-pdf" style="margin-top: 15px; text-align: center;"></div>
     </form>
 
     <!-- Modal de instrucciones -->
@@ -201,6 +207,28 @@
       </div>
     </div>
   </div>
+
+  <!-- Script optimizado para la descarga manual del PDF -->
+  <script>
+    function generarPDFExamen() {
+      const elemento = document.getElementById('contenido-examen');
+      const opciones = {
+        margin:       [10, 10, 10, 10],
+        filename:     `Examen_8_${typeof alumno !== 'undefined' && alumno ? alumno.replace(/\s+/g, '_') : 'Alumno'}.pdf`,
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { 
+          scale: 2, 
+          useCORS: true, 
+          scrollY: 0,
+          windowHeight: elemento.scrollHeight 
+        },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
+      };
+
+      html2pdf().from(elemento).set(opciones).save();
+    }
+  </script>
 
   <script src="leccion8-dia6.js"></script>
 </body>

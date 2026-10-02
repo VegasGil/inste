@@ -67,24 +67,32 @@ function calcularExamen() {
   }
 
   // Confirmaciones (16–17)
-  const estudie = document.querySelector('input[name="estudie"]');
-  const termine = document.querySelector('input[name="termine"]');
-  if (estudie && estudie.checked) score++;
-  if (termine && termine.checked) score++;
+  const estudie = document.querySelector('input[name="estudie"]')?.checked;
+  const termine = document.querySelector('input[name="termine"]')?.checked;
+  if (estudie) score++;
+  if (termine) score++;
 
   // Total = 17
   const total = 17;
-  const porcentaje = ((score / total) * 100).toFixed(2);
+  const porcentaje = Math.round((score / total) * 100);
 
+  // Mostrar resultado en pantalla
   document.getElementById("resultado").innerHTML =
     `<strong>Resultado final:</strong> ${score}/${total} (${porcentaje}%)`;
 
+  // Guardar en localStorage de forma segura
   const resultado = {
     nombre: alumno,
     puntaje: score,
-    porcentaje: porcentaje
+    porcentaje: porcentaje,
+    fecha: new Date().toISOString()
   };
   localStorage.setItem('examen11-como-estudiar-la-biblia', JSON.stringify(resultado));
 
-  window.print();
+  // Inyectar el botón de descarga manual de forma limpia
+  document.getElementById('acciones-pdf').innerHTML = `
+    <button type="button" onclick="generarPDFExamen()" style="background: #1f4e8c; color: white; border: none; width: 100%; padding: 12px; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold;">
+      📥 Descargar mi Examen en PDF
+    </button>
+  `;
 }

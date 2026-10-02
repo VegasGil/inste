@@ -41,8 +41,8 @@ function calcularExamenOracion() {
     "alabanza",
     "acción de gracias",
     "confesión",
-     "intercesión",
-     "súplica",
+    "intercesión",
+    "súplica",
     "petición"
   ];
 
@@ -78,6 +78,7 @@ function calcularExamenOracion() {
   const puntaje = total;
   const porcentaje = Math.round((puntaje / 14) * 100);
 
+  // Mostrar el resultado en pantalla
   document.getElementById("resultado").innerHTML = `
     <h3>Resultado del examen</h3>
     <p><strong>Alumno:</strong> ${alumno}</p>
@@ -85,6 +86,7 @@ function calcularExamenOracion() {
     <p><strong>Respuestas incorrectas:</strong> ${errores}</p>
   `;
 
+  // Guardar en el almacenamiento local de forma segura
   localStorage.setItem('examen6-oracion', JSON.stringify({
     nombre: alumno,
     puntaje,
@@ -92,5 +94,10 @@ function calcularExamenOracion() {
     fecha: new Date().toISOString()
   }));
 
-  window.print();
+  // Generar de forma segura el botón manual para que el usuario descargue cuando quiera
+  document.getElementById('acciones-pdf').innerHTML = `
+    <button type="button" onclick="generarPDFExamen()" style="background: #1f4e8c; color: white; border: none; width: 100%; padding: 12px; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold;">
+      📥 Descargar mi Examen en PDF
+    </button>
+  `;
 }

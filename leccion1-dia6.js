@@ -1,37 +1,38 @@
-  let alumno = "";
+let alumno = "";
 
-  window.onload = function () {
-    const resultadoGuardado = localStorage.getItem('examen1-orientacion');
-    if (resultadoGuardado) {
-      const datos = JSON.parse(resultadoGuardado);
-      document.getElementById('modal-bloqueo').style.display = 'block';
-      document.getElementById('mensaje-bloqueo').innerText =
-        `El alumno "${datos.nombre}" ya presentó el examen.\nPuntaje: ${datos.puntaje}/17 (${datos.porcentaje}%)`;
-    } else {
-      document.getElementById('modal-instrucciones').style.display = 'block';
-    }
-  };
-
-  function iniciarExamen() {
-    const nombreInput = document.getElementById('nombre').value.trim();
-    if (nombreInput === "") {
-      alert("Por favor ingresa tu nombre.");
-      return;
-    }
-    alumno = nombreInput;
-    document.getElementById('modal-instrucciones').style.display = 'none';
-    document.getElementById('nombre-impreso').innerText = `Alumno: ${alumno}`;
+window.onload = function () {
+  const resultadoGuardado = localStorage.getItem('examen1-orientacion');
+  if (resultadoGuardado) {
+    const datos = JSON.parse(resultadoGuardado);
+    document.getElementById('modal-bloqueo').style.display = 'block';
+    document.getElementById('mensaje-bloqueo').innerText =
+      `El alumno "${datos.nombre}" ya presentó el examen.\nPuntaje: ${datos.puntaje}/17 (${datos.porcentaje}%)`;
+  } else {
+    document.getElementById('modal-instrucciones').style.display = 'block';
   }
+};
 
-  function desbloquearExamen() {
-    const clave = document.getElementById('clave').value.trim();
-    if (clave === "59") {
-      localStorage.removeItem('examen1-orientacion');
-      location.reload();
-    } else {
-      alert("Clave incorrecta.");
-    }
+function iniciarExamen() {
+  const nombreInput = document.getElementById('nombre').value.trim();
+  if (nombreInput === "") {
+    alert("Por favor ingresa tu nombre.");
+    return;
   }
+  alumno = nombreInput;
+  document.getElementById('modal-instrucciones').style.display = 'none';
+  document.getElementById('nombre-impreso').innerText = `Alumno: ${alumno}`;
+}
+
+function desbloquearExamen() {
+  const clave = document.getElementById('clave').value.trim();
+  if (clave === "59") {
+    localStorage.removeItem('examen1-orientacion');
+    location.reload();
+  } else {
+    alert("Clave incorrecta.");
+  }
+}
+
 function calcularExamen() {
   const respuestas = {
     p1: 'A', p2: 'B', p3: 'C', p4: 'D', p5: 'D',
@@ -41,7 +42,7 @@ function calcularExamen() {
   let puntaje = 0;
   let incorrectas = 0;
 
-  // Preguntas tipo test (9 preguntas x 2 puntos = 18 posibles, pero se limitará luego)
+  // Preguntas tipo test
   for (let i = 1; i <= 9; i++) {
     const campo = document.querySelector(`select[name="p${i}"]`);
     const respuesta = campo.value.trim().toUpperCase();
@@ -83,17 +84,17 @@ function calcularExamen() {
   const termine = document.querySelector('input[name="extra2"]')?.checked;
   if (termine) puntaje += 1;
 
-  // 🔒 Limitar puntaje máximo
+  // Limitar puntaje máximo
   const total = 17;
   if (puntaje > total) puntaje = total;
 
   const porcentaje = Math.round((puntaje / total) * 100);
 
-  // Mostrar resultado
+  // Mostrar resultado en pantalla
   document.getElementById('resultado').innerText =
     `Alumno: ${alumno} | Puntaje: ${puntaje}/${total} (${porcentaje}%)`;
 
-  // Guardar en localStorage
+  // Guardar en localStorage de forma segura
   localStorage.setItem('examen1-orientacion', JSON.stringify({
     nombre: alumno,
     puntaje,
@@ -101,6 +102,10 @@ function calcularExamen() {
     fecha: new Date().toISOString()
   }));
 
-  // Imprimir
-  window.print();
+  // Inyectar de manera segura el botón para la descarga manual opcional del PDF
+  document.getElementById('acciones-pdf').innerHTML = `
+    <button type="button" onclick="generarPDFExamen()" style="background: #1f4e8c; color: white; border: none; width: 100%; padding: 12px; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold;">
+      📥 Descargar mi Examen en PDF
+    </button>
+  `;
 }

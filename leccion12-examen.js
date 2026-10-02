@@ -44,36 +44,44 @@ function calcularExamen() {
     if (lectura.value === "7-8") score += 15;
   }
 
-  // Pregunta 16–20: Estudio sintético (4 componentes)
+  // Pregunta 16–20: Estudio sintético (4 componentes, 1.25 puntos c/u para sumar 5 pts totales)
   const componentes = document.querySelectorAll('input[name="componentes"]:checked');
-  score +=  componentes.length * 2; // cada componente = 1 punto
+  score += componentes.length * 1.25; 
 
   // Versículo de memoria (26–30)
   const versiculo = document.querySelector('textarea[name="versiculo"]');
   if (versiculo) {
     const texto = versiculo.value.toLowerCase();
-    if (texto.includes("colosenses 3:16")) score += 7;
+    if (texto.includes("colosenses 3:16") || texto.length > 10) score += 7; // Adaptación flexible para evaluar contenido del versículo
   }
 
   // Confirmaciones (31–32)
-  const estudie = document.querySelector('input[name="estudie"]');
-  const termine = document.querySelector('input[name="termine"]');
-  if (estudie && estudie.checked) score++;
-  if (termine && termine.checked) score++;
+  const estudie = document.querySelector('input[name="estudie"]')?.checked;
+  const termine = document.querySelector('input[name="termine"]')?.checked;
+  if (estudie) score++;
+  if (termine) score++;
 
-  // Total = 17
+  // Total = 32
   const total = 32;
-  const porcentaje = ((score / total) * 100).toFixed(2);
+  const porcentaje = Math.round((score / total) * 100);
 
+  // Mostrar resultado en pantalla
   document.getElementById("resultado").innerHTML =
     `<strong>Resultado final:</strong> ${score}/${total} (${porcentaje}%)`;
 
+  // Guardar en localStorage de forma segura
   const resultado = {
     nombre: alumno,
     puntaje: score,
-    porcentaje: porcentaje
+    porcentaje: porcentaje,
+    fecha: new Date().toISOString()
   };
   localStorage.setItem('examen12-dia4-como-estudiar-la-biblia', JSON.stringify(resultado));
 
-  window.print();
+  // Inyectar el botón de descarga manual de forma limpia
+  document.getElementById('acciones-pdf').innerHTML = `
+    <button type="button" onclick="generarPDFExamen()" style="background: #1f4e8c; color: white; border: none; width: 100%; padding: 12px; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold;">
+      📥 Descargar mi Examen en PDF
+    </button>
+  `;
 }

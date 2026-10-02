@@ -5,22 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="examen.css">
   <title>Examen 1 – Orientación</title>
-
+  <!-- Librería html2pdf para la exportación a PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
-    <div class="examen-container">
+  <!-- Contenedor principal delimitado para el PDF -->
+  <div class="examen-container" id="contenido-examen">
 
-   
-  <div class="exame">
-  <div class="encabezado">
-    <img src="image.png" alt="INSTE" class="logo" />
-    <h1>El Discipulado 1</h1>
-  </div>
-  <h2>Examen 1: Orientación</h2>
-  <h3 id="nombre-impreso"></h3>
-  <p><em>Selecciona la respuesta correcta o completa según corresponda.</em></p>
-</div>
-
+    <div class="exame">
+      <div class="encabezado">
+        <img src="image.png" alt="INSTE" class="logo" />
+        <h1>El Discipulado 1</h1>
+      </div>
+      <h2>Examen 1: Orientación</h2>
+      <h3 id="nombre-impreso"></h3>
+      <p><em>Selecciona la respuesta correcta o completa según corresponda.</em></p>
+    </div>
 
     <form id="form-examen">
       <!-- Preguntas tipo test -->
@@ -85,7 +85,7 @@
           <option value="">Selecciona</option>
           <option value="A">A.Es muy simpático.</option>
           <option value="B">B.Sabe todo</option>
-          <option value="C">C.Comparte de su tiempo y experiencia y de su ejemplo propio lo que significa ser discípulo  	de Cristo.</option>
+          <option value="C">C.Comparte de su tiempo y experiencia y de su ejemplo propio lo que significa ser discípulo de Cristo.</option>
           <option value="D">D.Es un experto en teología.</option>
         </select>
       </article>
@@ -108,7 +108,7 @@
           <option value="A">A.Animar el uno al otro en su progreso hacia sus metas personales.</option>
           <option value="B">B.Estudiar juntos la lección de INSTE</option>
           <option value="C">C.Tomar un café juntos una vez por semana.</option>
-          <option value="D">D.	Predicar el uno al otro.</option>
+          <option value="D">D.Predicar el uno al otro.</option>
         </select>
       </article>
 
@@ -145,32 +145,60 @@
         <input type="checkbox" name="extra2" />
       </article>
 
-      <button type="button" onclick="calcularExamen()">Calcular y Imprimir</button>
+      <!-- Botón que SOLO calcula y califica de forma segura -->
+      <button type="button" onclick="calcularExamen()">Calcular Examen</button>
       <div id="resultado"></div>
+      
+      <!-- Contenedor seguro para la descarga manual del PDF -->
+      <div id="acciones-pdf" style="margin-top: 15px; text-align: center;"></div>
     </form>
   </div>
- </div>
- <!-- Modal de bienvenida -->
-<div id="modal-instrucciones" class="modal">
-  <div class="modal-content">
-    <h2>Instrucciones del examen</h2>
-    <p>Escribe en el espacio a la izquierda la letra de la respuesta correcta.<br>Hay solamente una respuesta por pregunta.</p>
-    <label for="nombre">Ingresa tu nombre:</label>
-    <input type="text" id="nombre" />
-    <button onclick="iniciarExamen()">Continuar</button>
-  </div>
-</div>
 
-<!-- Modal de bloqueo -->
-<div id="modal-bloqueo" class="modal">
-  <div class="modal-content">
-    <h2>Examen ya presentado</h2>
-    <p id="mensaje-bloqueo"></p>
-    <label for="clave">Ingresa la clave del facilitador para desbloquear:</label>
-    <input type="password" id="clave" />
-    <button onclick="desbloquearExamen()">Desbloquear</button>
+  <!-- Modal de bienvenida -->
+  <div id="modal-instrucciones" class="modal">
+    <div class="modal-content">
+      <h2>Instrucciones del examen</h2>
+      <p>Escribe en el espacio a la izquierda la letra de la respuesta correcta.<br>Hay solamente una respuesta por pregunta.</p>
+      <label for="nombre">Ingresa tu nombre:</label>
+      <input type="text" id="nombre" />
+      <button onclick="iniciarExamen()">Continuar</button>
+    </div>
   </div>
-</div>
- <script src="leccion1-dia6.js"></script>
+
+  <!-- Modal de bloqueo -->
+  <div id="modal-bloqueo" class="modal">
+    <div class="modal-content">
+      <h2>Examen ya presentado</h2>
+      <p id="mensaje-bloqueo"></p>
+      <label for="clave">Ingresa la clave del facilitador para desbloquear:</label>
+      <input type="password" id="clave" />
+      <button onclick="desbloquearExamen()">Desbloquear</button>
+    </div>
+  </div>
+
+  <!-- Script de configuración segura del PDF -->
+  <script>
+    function generarPDFExamen() {
+      const elemento = document.getElementById('contenido-examen');
+      const opciones = {
+        margin:       [10, 10, 10, 10],
+        filename:     `Examen_1_${typeof alumno !== 'undefined' && alumno ? alumno.replace(/\s+/g, '_') : 'Alumno'}.pdf`,
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { 
+          scale: 2, 
+          useCORS: true, 
+          scrollY: 0,
+          windowHeight: elemento.scrollHeight 
+        },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
+      };
+
+      html2pdf().from(elemento).set(opciones).save();
+    }
+  </script>
+
+  <!-- Script principal del examen -->
+  <script src="leccion1-dia6.js"></script>
 </body>
 </html>

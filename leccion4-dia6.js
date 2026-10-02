@@ -54,7 +54,7 @@ function calcularExamen() {
   }
 
   const versiculo = document.querySelector('textarea[name="versiculo"]')?.value.trim().toLowerCase();
-  if (versiculo.includes("por nada estéis afanosos") && versiculo.includes("la paz de dios")) {
+  if (versiculo && versiculo.includes("por nada estéis afanosos") && versiculo.includes("la paz de dios")) {
     puntajeBruto++;
   }
 
@@ -66,9 +66,11 @@ function calcularExamen() {
   const puntajeNormalizado = Math.round((puntajeBruto / totalBruto) * totalReal);
   const porcentaje = Math.round((puntajeNormalizado / totalReal) * 100);
 
+  // Mostrar resultado en pantalla
   document.getElementById('resultado').innerText =
     `Alumno: ${alumno} | Puntaje: ${puntajeNormalizado}/17 (${porcentaje}%)`;
 
+  // Guardar en localStorage de forma segura
   localStorage.setItem('examen4-lucha-espiritual', JSON.stringify({
     nombre: alumno,
     puntaje: puntajeNormalizado,
@@ -76,5 +78,10 @@ function calcularExamen() {
     fecha: new Date().toISOString()
   }));
 
-  window.print();
+  // Inyectar el botón de descarga manual de forma limpia
+  document.getElementById('acciones-pdf').innerHTML = `
+    <button type="button" onclick="generarPDFExamen()" style="background: #1f4e8c; color: white; border: none; width: 100%; padding: 12px; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold;">
+      📥 Descargar mi Examen en PDF
+    </button>
+  `;
 }

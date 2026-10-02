@@ -37,13 +37,12 @@ function calcularExamen() {
   let score = 0;
 
   // Preguntas 1–5: texto libre
- // Preguntas 1–5: texto libre (máximo 1 punto en total)
-let respuestasCompletas = 0;
-for (let i = 1; i <= 5; i++) {
-  const campo = document.querySelector(`input[name="p${i}"]`);
-  if (campo && campo.value.trim().length > 0) respuestasCompletas++;
-}
-if (respuestasCompletas >= 3) score++; // puedes ajustar el umbral si lo deseas
+  let respuestasCompletas = 0;
+  for (let i = 1; i <= 5; i++) {
+    const campo = document.querySelector(`input[name="p${i}"]`);
+    if (campo && campo.value.trim().length > 0) respuestasCompletas++;
+  }
+  if (respuestasCompletas >= 3) score++;
 
   // Preguntas 6–7: selección
   const respuestasSeleccion = {
@@ -87,23 +86,31 @@ if (respuestasCompletas >= 3) score++; // puedes ajustar el umbral si lo deseas
   if (compañero && compañero.value.trim().length > 0) score++;
 
   // Confirmaciones
-  const extra1 = document.querySelector('input[name="extra1"]');
-  const extra2 = document.querySelector('input[name="extra2"]');
-  if (extra1 && extra1.checked) score++;
-  if (extra2 && extra2.checked) score++;
+  const extra1 = document.querySelector('input[name="extra1"]')?.checked;
+  const extra2 = document.querySelector('input[name="extra2"]')?.checked;
+  if (extra1) score++;
+  if (extra2) score++;
 
   const total = 17;
-  const porcentaje = ((score / total) * 100).toFixed(2);
+  const porcentaje = Math.round((score / total) * 100);
 
+  // Mostrar resultado en pantalla
   document.getElementById("resultado").innerHTML =
     `<strong>Resultado final:</strong> ${score}/${total} (${porcentaje}%)`;
 
+  // Guardar en localStorage de forma segura
   const resultado = {
     nombre: alumno,
     puntaje: score,
-    porcentaje: porcentaje
+    porcentaje: porcentaje,
+    fecha: new Date().toISOString()
   };
   localStorage.setItem('examen8-identidad', JSON.stringify(resultado));
 
-  window.print();
+  // Inyectar el botón de descarga manual de forma limpia
+  document.getElementById('acciones-pdf').innerHTML = `
+    <button type="button" onclick="generarPDFExamen()" style="background: #1f4e8c; color: white; border: none; width: 100%; padding: 12px; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold;">
+      📥 Descargar mi Examen en PDF
+    </button>
+  `;
 }

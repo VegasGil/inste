@@ -4,10 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Examen 4 – La lucha espiritual</title>
+  <!-- Librería html2pdf -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <link rel="stylesheet" href="examen.css" />
 </head>
 <body>
-  <div class="examen-container">
+  <div class="examen-container" id="contenido-examen">
     <div class="exame">
       <div class="encabezado">
         <img src="image.png" alt="INSTE" class="logo" />
@@ -28,7 +30,7 @@
           <option value="C">C. Gálatas 5</option>
         </select>
       </article>
-     <h3>Empareja la parte del armadura con las frases a continuación..</h3>
+     <h3>Empareja la parte del armadura con las frases a continuación.</h3>
       <P>A. La cintura	B. La coraza 	C. La calzada	D. El escudo	E. El yelmo 	F. La espada</P>
       <article><label>2. Yo sé que soy salvo; el diablo no puede hacerme dudar de mi salvación.</label>
         <select name="p2">
@@ -164,33 +166,58 @@
         <input type="checkbox" name="extra2" />
       </article>
 
-      <button type="button" onclick="calcularExamen()">Calcular y Imprimir</button>
+      <!-- Botón que SOLO calcula el examen de forma segura -->
+      <button type="button" onclick="calcularExamen()">Calcular Examen</button>
       <div id="resultado"></div>
+      
+      <!-- Contenedor seguro para el botón de descarga manual -->
+      <div id="acciones-pdf" style="margin-top: 15px; text-align: center;"></div>
     </form>
-
-    <!-- Modal de instrucciones -->
-<div id="modal-instrucciones" class="modal">
-  <div class="modal-content">
-    <h2>Instrucciones del examen</h2>
-    <p>Selecciona la respuesta correcta o completa según corresponda.<br>Ingresa tu nombre para continuar.</p>
-    <label for="nombre">Nombre del alumno:</label>
-    <input type="text" id="nombre" />
-    <button onclick="iniciarExamen()">Continuar</button>
   </div>
-</div>
 
-<!-- Modal de bloqueo -->
-<div id="modal-bloqueo" class="modal">
-  <div class="modal-content">
-    <h2>Examen ya presentado</h2>
-    <p id="mensaje-bloqueo"></p>
-    <label for="clave">Clave del facilitador para desbloquear:</label>
-    <input type="password" id="clave" />
-    <button onclick="desbloquearExamen()">Desbloquear</button>
+  <!-- Modal de instrucciones -->
+  <div id="modal-instrucciones" class="modal">
+    <div class="modal-content">
+      <h2>Instrucciones del examen</h2>
+      <p>Selecciona la respuesta correcta o completa según corresponda.<br>Ingresa tu nombre para continuar.</p>
+      <label for="nombre">Nombre del alumno:</label>
+      <input type="text" id="nombre" />
+      <button onclick="iniciarExamen()">Continuar</button>
+    </div>
   </div>
-</div>
 
+  <!-- Modal de bloqueo -->
+  <div id="modal-bloqueo" class="modal">
+    <div class="modal-content">
+      <h2>Examen ya presentado</h2>
+      <p id="mensaje-bloqueo"></p>
+      <label for="clave">Clave del facilitador para desbloquear:</label>
+      <input type="password" id="clave" />
+      <button onclick="desbloquearExamen()">Desbloquear</button>
+    </div>
+  </div>
 
+  <!-- Script optimizado para la descarga manual del PDF -->
+  <script>
+    function generarPDFExamen() {
+      const elemento = document.getElementById('contenido-examen');
+      const opciones = {
+        margin:       [10, 10, 10, 10],
+        filename:     `Examen_4_${typeof alumno !== 'undefined' && alumno ? alumno.replace(/\s+/g, '_') : 'Alumno'}.pdf`,
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { 
+          scale: 2, 
+          useCORS: true, 
+          scrollY: 0,
+          windowHeight: elemento.scrollHeight 
+        },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
+      };
+
+      html2pdf().from(elemento).set(opciones).save();
+    }
+  </script>
 
   <script src="leccion4-dia6.js"></script>
 </body>

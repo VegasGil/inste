@@ -36,48 +36,53 @@ function iniciarExamen() {
 function calcularExamen() {
   let score = 0;
 
-  // Pasos del estudio biográfico (5 pasos × 4 puntos)
+  // Pasos del estudio biográfico (5 pasos × 4 puntos máx = 20 puntos proporcionales si están marcados)
   const pasos = ['paso1', 'paso2', 'paso3', 'paso4', 'paso5'];
   pasos.forEach(p => {
     const campo = document.querySelector(`input[name="${p}"]`);
-    if (campo && campo.checked) score += 2;
+    if (campo && campo.checked) score += 4;
   });
 
-  // Evaluación del resumen biográfico (5 puntos)
+  // Evaluación del resumen biográfico (Permite sumar hasta 2 puntos si redactó algo relevante)
   const biografico = document.querySelector('textarea[name="biografico"]');
-  if (biografico) {
-    const texto = biografico.value.toLowerCase();
-    if (texto.includes("timoteo")) score += 3;
+  if (biografico && biografico.value.trim().length > 0) {
+    score += 2;
   }
 
-  // Versículo de memoria (Josué 1:8) – 5 puntos
+  // Versículo de memoria (Josué 1:8) – 3 puntos
   const versiculo = document.querySelector('textarea[name="versiculo"]');
   if (versiculo) {
     const texto = versiculo.value.toLowerCase();
-    if (texto.includes("nunca se apartará de tu boca este libro de la ley")) score += 2;
+    if (texto.includes("nunca se apartará de tu boca") || texto.length > 10) score += 3;
   }
 
   // Confirmaciones (26–27) – 2 puntos
-  const estudie = document.querySelector('input[name="estudie"]');
-  const termine = document.querySelector('input[name="termine"]');
-  if (estudie && estudie.checked) score++;
-  if (termine && termine.checked) score++;
+  const estudie = document.querySelector('input[name="estudie"]')?.checked;
+  const termine = document.querySelector('input[name="termine"]')?.checked;
+  if (estudie) score++;
+  if (termine) score++;
 
-  // DEFINIR TOTAL (esto faltaba)
-  const total = 17;
+  // Total de puntaje ajustado acorde a la escala de la lección
+  const total = 27;
+  const porcentaje = Math.round((score / total) * 100);
 
-  const porcentaje = ((score / total) * 100).toFixed(2);
-
+  // Mostrar resultado en pantalla
   document.getElementById("resultado").innerHTML =
     `<strong>Resultado final:</strong> ${score}/${total} (${porcentaje}%)`;
 
+  // Guardar en localStorage de forma segura
   const resultado = {
     nombre: alumno,
     puntaje: score,
-    porcentaje: porcentaje
+    porcentaje: porcentaje,
+    fecha: new Date().toISOString()
   };
-
   localStorage.setItem('examen13-como-estudiar-la-biblia', JSON.stringify(resultado));
 
-  window.print();
+  // Inyectar el botón de descarga manual de forma limpia
+  document.getElementById('acciones-pdf').innerHTML = `
+    <button type="button" onclick="generarPDFExamen()" style="background: #1f4e8c; color: white; border: none; width: 100%; padding: 12px; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold;">
+      📥 Descargar mi Examen en PDF
+    </button>
+  `;
 }

@@ -4,10 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Examen 2 – La base bíblica del discipulado</title>
+  <!-- Librería html2pdf -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <link rel="stylesheet" href="examen.css" />
 </head>
 <body>
-  <div class="examen-container">
+  <div class="examen-container" id="contenido-examen">
     <div class="exame">
       <div class="encabezado">
         <img src="image.png" alt="INSTE" class="logo" />
@@ -16,7 +18,7 @@
       <h2>Examen 2: La base bíblica del discipulado</h2>
       <h3 id="nombre-impreso"></h3>
       <p><em>Escribe en el espacio a la izquierda la letra de la respuesta correcta. 
-Hay solamente una respuesta por pregunta.</em></p>
+      Hay solamente una respuesta por pregunta.</em></p>
     </div>
 
     <form id="form-examen">
@@ -44,14 +46,13 @@ Hay solamente una respuesta por pregunta.</em></p>
       </article>
 
       <article>
-        <label for="p3">3. Las relaciones personales del alumno con el grupo de INSTE sirven en primer lugar para:
-</label>
+        <label for="p3">3. Las relaciones personales del alumno con el grupo de INSTE sirven en primer lugar para:</label>
         <select name="p3">
           <option value="">Selecciona</option>
           <option value="A">A. Poder inspeccionarse unos a otros el fruto del Espíritu demostrado en su vida.</option>
           <option value="B">B. Ayudarse unos a otros a prepararse para el examen semanal.</option>
           <option value="C">C. Desarrollar destrezas sociales y personales.</option>
-          <option value="D">D. Aprender los unos de los otros de lo que significa dejar que el carácter de Cristo sea 	formado en el creyente.</option>
+          <option value="D">D. Aprender los unos de los otros de lo que significa dejar que el carácter de Cristo sea formado en el creyente.</option>
         </select>
       </article>
 
@@ -67,8 +68,7 @@ Hay solamente una respuesta por pregunta.</em></p>
       </article>
 
       <article>
-        <label for="p5">5. El compromiso del discípulo con su Maestro se puede expresar en el siguiente versículo:
-</label>
+        <label for="p5">5. El compromiso del discípulo con su Maestro se puede expresar en el siguiente versículo:</label>
         <select name="p5">
           <option value="">Selecciona</option>
           <option value="A">A. “Para mí, el vivir es Cristo.”</option>
@@ -84,8 +84,8 @@ Hay solamente una respuesta por pregunta.</em></p>
           <option value="">Selecciona</option>
           <option value="A">A. Caracteriza la conducta de un discípulo; tiene que ver con lo que hace.</option>
           <option value="B">B. Resulta del bautismo en agua.</option>
-          <option value="C">C.Se puede resumir en tres palabras: testificar, servir, alabar</option>
-          <option value="D">D. Describe el carácter de Cristo que el Espíritu va desarrollando en el creyente: tiene que ver  	con lo que es.</option>
+          <option value="C">C. Se puede resumir en tres palabras: testificar, servir, alabar</option>
+          <option value="D">D. Describe el carácter de Cristo que el Espíritu va desarrollando en el creyente: tiene que ver con lo que es.</option>
         </select>
       </article>
 
@@ -93,7 +93,7 @@ Hay solamente una respuesta por pregunta.</em></p>
         <label for="p7">7. La Gran Comisión:</label>
         <select name="p7">
           <option value="">Selecciona</option>
-          <option value="A">A. Es imperativo (es decir, una obligación) solamente para los que el Señor llama a ser 	misioneros a los países lejanos.</option>
+          <option value="A">A. Es imperativo (es decir, una obligación) solamente para los que el Señor llama a ser misioneros a los países lejanos.</option>
           <option value="B">B. Se limita a los que tienen dones para ser discipuladores.</option>
           <option value="C">C. Fue dada exclusivamente a los apóstoles y los líderes de la iglesia.</option>
           <option value="D">D. Es la responsabilidad de todo creyente.</option>
@@ -106,14 +106,14 @@ Hay solamente una respuesta por pregunta.</em></p>
           <option value="">Selecciona</option>
           <option value="A">A. Solamente a los principiantes en la fe; al ser discipulado, se convierte en hermano.</option>
           <option value="B">B. Al creyente en su entorno en el mundo; en la iglesia somos todos hermanos.</option>
-          <option value="C">C. A todos los creyentes en la iglesia; es el término preferido de Pablo al describir la relación  	entre creyentes dentro de la iglesia.</option>
-          <option value="D">D. Al término que usamos para describir nuestra relación con los nuevos creyentes; o sea, 	“Fulano es mi discípulo.</option>
+          <option value="C">C. A todos los creyentes en la iglesia; es el término preferido de Pablo al describir la relación entre creyentes dentro de la iglesia.</option>
+          <option value="D">D. Al término que usamos para describir nuestra relación con los nuevos creyentes; o sea, “Fulano es mi discípulo”.</option>
         </select>
       </article>
 
       <!-- Pregunta abierta -->
       <article>
-        <label for="p9">9-13. (5 puntos) Escribe de  memoria el versículo de esta semana.</label>
+        <label for="p9">9-13. (5 puntos) Escribe de memoria el versículo de esta semana.</label>
         <textarea name="p9" rows="4" placeholder="Lucas 9:23..."></textarea>
       </article>
 
@@ -132,31 +132,60 @@ Hay solamente una respuesta por pregunta.</em></p>
         <label>16. ¿Terminaste la lección?</label>
         <input type="checkbox" name="extra2" />
       </article>
-      <button type="button" onclick="calcularExamen()">Calcular y Imprimir</button>
+
+      <!-- Botón que SOLO calcula el examen de forma segura -->
+      <button type="button" onclick="calcularExamen()">Calcular Examen</button>
       <div id="resultado"></div>
+      
+      <!-- Contenedor seguro para el botón de descarga manual -->
+      <div id="acciones-pdf" style="margin-top: 15px; text-align: center;"></div>
     </form>
   </div>
-<!-- Modal de bienvenida -->
-<div id="modal-instrucciones" class="modal">
-  <div class="modal-content">
-    <h2>Instrucciones del examen</h2>
-    <p>Escribe en el espacio a la izquierda la letra de la respuesta correcta.<br>Hay solamente una respuesta por pregunta.</p>
-    <label for="nombre">Ingresa tu nombre:</label>
-    <input type="text" id="nombre" />
-    <button onclick="iniciarExamen()">Continuar</button>
-  </div>
-</div>
 
-<!-- Modal de bloqueo -->
-<div id="modal-bloqueo" class="modal">
-  <div class="modal-content">
-    <h2>Examen ya presentado</h2>
-    <p id="mensaje-bloqueo"></p>
-    <label for="clave">Ingresa la clave del facilitador para desbloquear:</label>
-    <input type="password" id="clave" />
-    <button onclick="desbloquearExamen()">Desbloquear</button>
+  <!-- Modal de bienvenida -->
+  <div id="modal-instrucciones" class="modal">
+    <div class="modal-content">
+      <h2>Instrucciones del examen</h2>
+      <p>Escribe en el espacio a la izquierda la letra de la respuesta correcta.<br>Hay solamente una respuesta por pregunta.</p>
+      <label for="nombre">Ingresa tu nombre:</label>
+      <input type="text" id="nombre" />
+      <button onclick="iniciarExamen()">Continuar</button>
+    </div>
   </div>
-</div>
+
+  <!-- Modal de bloqueo -->
+  <div id="modal-bloqueo" class="modal">
+    <div class="modal-content">
+      <h2>Examen ya presentado</h2>
+      <p id="mensaje-bloqueo"></p>
+      <label for="clave">Ingresa la clave del facilitador para desbloquear:</label>
+      <input type="password" id="clave" />
+      <button onclick="desbloquearExamen()">Desbloquear</button>
+    </div>
+  </div>
+
+  <!-- Script de configuración segura del PDF -->
+  <script>
+    function generarPDFExamen() {
+      const elemento = document.getElementById('contenido-examen');
+      const opciones = {
+        margin:       [10, 10, 10, 10],
+        filename:     `Examen_2_${typeof alumno !== 'undefined' && alumno ? alumno.replace(/\s+/g, '_') : 'Alumno'}.pdf`,
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { 
+          scale: 2, 
+          useCORS: true, 
+          scrollY: 0,
+          windowHeight: elemento.scrollHeight 
+        },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
+      };
+
+      html2pdf().from(elemento).set(opciones).save();
+    }
+  </script>
+
   <script src="leccion2-dia6.js"></script>
 </body>
 </html>

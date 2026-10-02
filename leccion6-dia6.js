@@ -36,10 +36,10 @@ function iniciarExamen() {
 function calcularExamen() {
   let score = 0;
 
-  // Evaluar solo los principios (1 punto por cada uno si tiene contenido)
+  // Evaluar solo los principios (2 puntos por cada uno si tiene contenido)
   for (let i = 1; i <= 7; i++) {
     const principio = document.querySelector(`textarea[name="principio${i}"]`);
-    if (principio && principio.value.trim().length > 0) score +=2;
+    if (principio && principio.value.trim().length > 0) score += 2;
   }
 
   // Evaluar testimonio (1 punto si tiene contenido)
@@ -53,17 +53,25 @@ function calcularExamen() {
   if (extra2 && extra2.checked) score++;
 
   const total = 17;
-  const porcentaje = ((score / total) * 100).toFixed(2);
+  const porcentaje = Math.round((score / total) * 100);
 
+  // Mostrar resultado en pantalla
   document.getElementById("resultado").innerHTML =
     `<strong>Resultado final:</strong> ${score}/${total} (${porcentaje}%)`;
 
+  // Guardar en localStorage de forma segura
   const resultado = {
     nombre: alumno,
     puntaje: score,
-    porcentaje: porcentaje
+    porcentaje: porcentaje,
+    fecha: new Date().toISOString()
   };
   localStorage.setItem('examen9-testigos', JSON.stringify(resultado));
 
-  window.print();
+  // Inyectar el botón de descarga manual de forma limpia
+  document.getElementById('acciones-pdf').innerHTML = `
+    <button type="button" onclick="generarPDFExamen()" style="background: #1f4e8c; color: white; border: none; width: 100%; padding: 12px; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold;">
+      📥 Descargar mi Examen en PDF
+    </button>
+  `;
 }
