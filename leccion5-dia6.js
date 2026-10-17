@@ -1,12 +1,12 @@
 let alumno = "";
 
 window.onload = function () {
-  const resultadoGuardado = localStorage.getItem('examen9-testigos');
+  const resultadoGuardado = localStorage.getItem('examen8-orando-espiritu');
   if (resultadoGuardado) {
     const datos = JSON.parse(resultadoGuardado);
     document.getElementById('modal-bloqueo').style.display = 'flex';
     document.getElementById('mensaje-bloqueo').innerText =
-      `El alumno "${datos.nombre}" ya presentó el examen.\nPuntaje: ${datos.puntaje}/17 (${datos.porcentaje}%)`;
+      `El alumno "${datos.nombre}" ya presentó el examen.\nPuntaje: ${datos.puntaje}/12 (${datos.porcentaje}%)`;
   } else {
     document.getElementById('modal-instrucciones').style.display = 'flex';
   }
@@ -15,7 +15,7 @@ window.onload = function () {
 function desbloquearExamen() {
   const clave = document.getElementById('clave').value.trim();
   if (clave === "59") {
-    localStorage.removeItem('examen9-testigos');
+    localStorage.removeItem('examen8-orando-espiritu');
     location.reload();
   } else {
     alert("Clave incorrecta.");
@@ -34,44 +34,49 @@ function iniciarExamen() {
 }
 
 function calcularExamen() {
+  const respuestasCorrectas = {
+    p1: "C",
+    p2: "B",
+    p3: "D",
+    p4: "B",
+    p5: "B"
+  };
+
   let score = 0;
 
-  // Evaluar solo los principios (2 puntos por cada uno si tiene contenido)
-  for (let i = 1; i <= 7; i++) {
-    const principio = document.querySelector(`textarea[name="principio${i}"]`);
-    if (principio && principio.value.trim().length > 0) score += 2;
+  // Evaluar preguntas tipo test
+  for (let key in respuestasCorrectas) {
+    const respuesta = document.querySelector(`select[name="${key}"]`).value;
+    if (respuesta === respuestasCorrectas[key]) score++;
   }
 
-  // Evaluar testimonio (1 punto si tiene contenido)
-  const testimonio = document.querySelector('textarea[name="testimonio"]');
-  if (testimonio && testimonio.value.trim().length > 0) score++;
+  // Evaluar versículo (normalizado)
+ const versiculo = document.querySelector('textarea[name="versiculo"]').value.trim().toLowerCase();
 
-  // Confirmaciones
-  const extra1 = document.querySelector('input[name="extra1"]');
-  const extra2 = document.querySelector('input[name="extra2"]');
-  if (extra1 && extra1.checked) score++;
-  if (extra2 && extra2.checked) score++;
+// Validación flexible: solo verifica si contiene la palabra "señor"
+if (versiculo.includes("señor")) score += 5;
 
-  const total = 17;
-  const porcentaje = Math.round((score / total) * 100);
 
-  // Mostrar resultado en pantalla
+
+  // Evaluar confirmaciones
+  const extra1 = document.querySelector('input[name="extra1"]').checked;
+  const extra2 = document.querySelector('input[name="extra2"]').checked;
+  if (extra1) score++;
+  if (extra2) score++;
+
+  const total = 12;
+  const porcentaje = ((score / total) * 100).toFixed(2);
+
   document.getElementById("resultado").innerHTML =
     `<strong>Resultado final:</strong> ${score}/${total} (${porcentaje}%)`;
 
-  // Guardar en localStorage de forma segura
+  // Guardar resultado
   const resultado = {
     nombre: alumno,
     puntaje: score,
-    porcentaje: porcentaje,
-    fecha: new Date().toISOString()
+    porcentaje: porcentaje
   };
-  localStorage.setItem('examen9-testigos', JSON.stringify(resultado));
+  localStorage.setItem('examen8-orando-espiritu', JSON.stringify(resultado));
 
-  // Inyectar el botón de descarga manual de forma limpia
-  document.getElementById('acciones-pdf').innerHTML = `
-    <button type="button" onclick="generarPDFExamen()" style="background: #1f4e8c; color: white; border: none; width: 100%; padding: 12px; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold;">
-      📥 Descargar mi Examen en PDF
-    </button>
-  `;
+  window.print();
 }
