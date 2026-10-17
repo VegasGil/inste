@@ -51,12 +51,12 @@ function calcularExamen() {
   // Pregunta 4–6: oración (3 puntos si tiene contenido)
   const oracionCampo = document.querySelector('textarea[name="oracion"]');
   const oracion = oracionCampo ? oracionCampo.value.trim() : "";
-  if (oracion.length > 0) score += 3;
+  if (oracion.length > 0) score += 8;
 
   // Pregunta 7–9: ayuda al nuevo creyente (3 puntos si tiene contenido)
   const ayudaCampo = document.querySelector('textarea[name="ayuda"]');
   const ayuda = ayudaCampo ? ayudaCampo.value.trim() : "";
-  if (ayuda.length > 0) score += 3;
+  if (ayuda.length > 0) score += 5;
 
   // Pregunta 10: pregunta difícil (1 punto si tiene contenido)
   const dificilCampo = document.querySelector('textarea[name="dificil"]');
@@ -66,7 +66,7 @@ function calcularExamen() {
   // Pregunta 11–15: versículo (5 puntos si contiene "señor")
   const versiculoCampo = document.querySelector('textarea[name="versiculo"]');
   const versiculo = versiculoCampo ? versiculoCampo.value.trim().toLowerCase() : "";
-  if (versiculo.includes("señor")) score += 5;
+  if (versiculo.includes("señor")) score += 8;
 
   // Confirmaciones (1 punto cada una)
   const extra1 = document.querySelector('input[name="extra1"]')?.checked;

@@ -51,7 +51,7 @@ function calcularExamen() {
   };
   for (let key in respuestasSeleccion) {
     const campo = document.querySelector(`select[name="${key}"]`);
-    if (campo && campo.value === respuestasSeleccion[key]) score++;
+    if (campo && campo.value === respuestasSeleccion[key]) score += 1;
   }
 
   // Preguntas 8–17: ventana de Johari
@@ -79,11 +79,11 @@ function calcularExamen() {
     versiculo.value.toLowerCase().includes("nueva criatura") &&
     versiculo.value.toLowerCase().includes("cosas viejas pasaron") &&
     versiculo.value.toLowerCase().includes("todas son hechas nuevas")
-  ) score++;
+  ) score += 1;
 
   // Ejercicio del día 2
   const compañero = document.querySelector('textarea[name="compañero"]');
-  if (compañero && compañero.value.trim().length > 0) score++;
+  if (compañero && compañero.value.trim().length > 0) score += 1;
 
   // Confirmaciones
   const extra1 = document.querySelector('input[name="extra1"]')?.checked;
