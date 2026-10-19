@@ -52,7 +52,7 @@ function calcularExamen() {
   const versiculo = document.querySelector('textarea[name="versiculo"]');
   if (versiculo) {
     const texto = versiculo.value.toLowerCase();
-    if (texto.includes("colosenses 3:16") || texto.length > 10) score += 7; // Adaptación flexible para evaluar contenido del versículo
+    if (texto.includes("salmos e himnos") || texto.length > 10) score += 10; // Adaptación flexible para evaluar contenido del versículo
   }
 
   // Confirmaciones (31–32)

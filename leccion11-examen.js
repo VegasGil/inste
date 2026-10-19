@@ -55,14 +55,14 @@ function calcularExamen() {
 
   // Pregunta abierta 9–10 (respuesta de sermón)
   const respuestaSermon = document.querySelector('textarea[name="respuesta_sermon"]');
-  if (respuestaSermon && respuestaSermon.value.trim().length > 0) score++;
+  if (respuestaSermon && respuestaSermon.value.trim().length > 0) score += 3;
 
   // Versículo de memoria (11–15)
   const versiculo = document.querySelector('textarea[name="versiculo"]');
   if (versiculo) {
     const texto = versiculo.value.toLowerCase();
-    if (texto.includes("todo lo puedo")) score += 2;
-    if (texto.includes("en cristo")) score += 2;
+    if (texto.includes("todo lo puedo")) score += 1;
+    if (texto.includes("en cristo")) score += 1;
     if (texto.includes("que me fortalece")) score += 2;
   }
 
